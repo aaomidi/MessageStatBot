@@ -35,6 +35,14 @@ public class TelegramUser {
         changesMade = true;
     }
 
+    public int getWordCount() {
+        int count = 0;
+        for (TelegramMessage m : messages) {
+            count += m.getWordCount();
+        }
+        return count;
+    }
+
     public TelegramMessage getRandomMessage() {
         return getRandomMessage(-1);
     }

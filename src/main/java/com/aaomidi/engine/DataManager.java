@@ -91,6 +91,9 @@ public class DataManager {
 
         return null;
     }
+    public TreeList<TelegramUser> getUsers(String chatID){
+        return chatUserMap.get(chatID);
+    }
 
     public void initializeChat(String chatID) {
         if (doesChatExist(chatID)) return;
