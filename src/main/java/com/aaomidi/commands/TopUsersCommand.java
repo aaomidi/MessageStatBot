@@ -33,14 +33,6 @@ public class TopUsersCommand extends TelegramCommand {
 
                     return o1.getMessages().size() > o2.getMessages().size() ? -1 : 1;
                 });
-                int i = 0;
-                for (TelegramUser user : users) {
-                    if (i++ == 5) break;
-                    sb.append(String.format("%d - %s", user.getMessages().size(), user.getName()));
-
-                    if (user.getUsername() != null) sb.append(String.format("(%s)", user.getUsername()));
-                    sb.append("\n");
-                }
                 break;
             }
             case "words": {
@@ -49,14 +41,6 @@ public class TopUsersCommand extends TelegramCommand {
 
                     return o1.getWordCount() > o2.getWordCount() ? -1 : 1;
                 });
-                int i = 0;
-                for (TelegramUser user : users) {
-                    if (i++ == 5) break;
-                    sb.append(String.format("%d - %s", user.getWordCount(), user.getName()));
-
-                    if (user.getUsername() != null) sb.append(String.format("(%s)", user.getUsername()));
-                    sb.append("\n");
-                }
                 break;
             }
 
@@ -67,17 +51,19 @@ public class TopUsersCommand extends TelegramCommand {
 
                     return o1.getWordCount() / (double) o1.getMessages().size() > o2.getWordCount() / (double) o2.getMessages().size() ? -1 : 1;
                 });
-                int i = 0;
-                for (TelegramUser user : users) {
-                    if (i++ == 5) break;
-                    sb.append(String.format("%.2f - %s", user.getWordCount() / (double) user.getMessages().size(), user.getName()));
 
-                    if (user.getUsername() != null) sb.append(String.format("(%s)", user.getUsername()));
-                    sb.append("\n");
-                }
             }
 
             break;
+        }
+
+        int i = 0;
+        for (TelegramUser user : users) {
+            if (i++ == 5) break;
+            sb.append(String.format("%.2f - %s", user.getWordCount() / (double) user.getMessages().size(), user.getName()));
+
+            if (user.getUsername() != null) sb.append(String.format("(%s)", user.getUsername()));
+            sb.append("\n");
         }
         chat.sendMessage(sb.toString(), getTelegramBot());
     }

@@ -2,6 +2,7 @@ package com.aaomidi.handler;
 
 import com.aaomidi.MessageStatBot;
 import com.aaomidi.commands.GetMessagesCommand;
+import com.aaomidi.commands.PingAllCommand;
 import com.aaomidi.commands.StatCounter;
 import com.aaomidi.commands.TopUsersCommand;
 import com.aaomidi.model.TelegramCommand;
@@ -28,6 +29,7 @@ public class CommandHandler {
         statCounter = new StatCounter(instance, "statcounter", "Does nothing");
         new GetMessagesCommand(instance, "getmessages", "");
         new TopUsersCommand(instance, "topusers", "");
+        // new PingAllCommand(instance, "pingall", "");
     }
 
     public void registerCommand(TelegramCommand telegramCommand) {
