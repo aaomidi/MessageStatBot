@@ -3,6 +3,8 @@ package com.aaomidi.model;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
 /**
  * Created by amir on 2015-11-27.
  */
@@ -32,6 +34,11 @@ public class TelegramMessage {
         }
 
         return count;
+    }
+
+    public String[] words(){
+        // Thanks to @Earth2Me
+        return message.split("[^\\pL\\pN\\p{Pc}]+");
     }
 
     public enum Type {

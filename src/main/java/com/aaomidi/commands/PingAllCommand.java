@@ -7,6 +7,8 @@ import org.apache.commons.collections4.list.TreeList;
 import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 
+import java.util.List;
+
 /**
  * Created by amir on 2015-11-27.
  */
@@ -20,7 +22,7 @@ public class PingAllCommand extends TelegramCommand {
         if (!event.getMessage().getSender().getUsername().equals("aaomidi")) return;
 
         Chat chat = event.getChat();
-        TreeList<TelegramUser> users = getInstance().getDataManager().getUsers(chat.getId());
+        List<TelegramUser> users = getInstance().getDataManager().getUsers(chat.getId());
 
 
         StringBuilder sb = new StringBuilder();

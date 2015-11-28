@@ -23,7 +23,7 @@ public class TelegramHook implements Listener {
 
         bot.getEventsManager().register(this);
 
-        bot.startUpdates(false);
+        bot.startUpdates(true);
 
         //Chat mazenChat = TelegramBot.getChat(-17349250);
         //mazenChat.sendMessage("I LIKE TITS!!! @zackpollard", bot);

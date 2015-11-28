@@ -1,12 +1,13 @@
 package com.aaomidi.engine;
 
+import com.aaomidi.model.TelegramChat;
 import com.aaomidi.model.TelegramUser;
 import com.aaomidi.util.LogHandler;
 import com.google.gson.Gson;
-import org.apache.commons.collections4.list.TreeList;
 import pro.zackpollard.telegrambot.api.user.User;
 
 import java.io.*;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -15,7 +16,7 @@ import java.util.TreeMap;
  */
 public class DataManager {
     // <ChatID, UserID>
-    private TreeMap<String, TreeList<TelegramUser>> chatUserMap = new TreeMap<>();
+    private Map<String, TelegramChat> chatUserMap = new TreeMap<>();
 
     public DataManager() {
         String currentPath = System.getProperty("user.dir");
@@ -38,9 +39,9 @@ public class DataManager {
 
         for (File f : file.listFiles()) {
             if (!f.isDirectory() || file.listFiles() == null) continue; // Wrong data.
+            TelegramChat telegramChat = new TelegramChat(f.getName());
 
-            TreeList<TelegramUser> users = new TreeList<>();
-            chatUserMap.put(f.getName(), users);
+            chatUserMap.put(f.getName(), telegramChat);
 
             for (File userFile : f.listFiles()) {
                 if (userFile.isDirectory()) continue; // Wrong data.
@@ -55,7 +56,7 @@ public class DataManager {
                         userFile.delete(); // Get rid of shitty file
                         continue;
                     }
-                    users.add(telegramUser);
+                    telegramChat.addUser(telegramUser);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -69,7 +70,9 @@ public class DataManager {
     }
 
     public boolean doesUserExist(String chatID, Integer userID) {
-        TreeList<TelegramUser> users = chatUserMap.get(chatID);
+        TelegramChat chat = getChat(chatID);
+        List<TelegramUser> users = chat.getUsers();
+
 
         if (users == null) return false;
 
@@ -80,10 +83,16 @@ public class DataManager {
         return false;
     }
 
-    public TelegramUser getUser(String chatID, Integer userID) {
-        TreeList<TelegramUser> users = chatUserMap.get(chatID);
+    public TelegramChat getChat(String chatID) {
+        return chatUserMap.get(chatID);
+    }
 
-        if (users == null) return null;
+    public TelegramUser getUser(String chatID, Integer userID) {
+        TelegramChat telegramChat = getChat(chatID);
+
+        if (telegramChat == null) return null;
+
+        List<TelegramUser> users = telegramChat.getUsers();
 
         for (TelegramUser t : users) {
             if (t.getId() == userID) return t;
@@ -91,8 +100,13 @@ public class DataManager {
 
         return null;
     }
-    public TreeList<TelegramUser> getUsers(String chatID){
-        return chatUserMap.get(chatID);
+
+    public List<TelegramUser> getUsers(String chatID) {
+        TelegramChat chat = getChat(chatID);
+
+        if (chat == null) return null;
+
+        return chat.getUsers();
     }
 
     public void initializeChat(String chatID) {
@@ -108,7 +122,7 @@ public class DataManager {
 
         createFile(currentPath, true);
 
-        chatUserMap.put(chatID, new TreeList<TelegramUser>());
+        chatUserMap.put(chatID, new TelegramChat(chatID));
     }
 
     public void initializeUser(String chatID, int userID, User user) {
@@ -125,8 +139,8 @@ public class DataManager {
 
         createFile(currentPath, false);
 
-        TreeList<TelegramUser> list = chatUserMap.get(chatID);
-        list.add(new TelegramUser(user));
+        TelegramChat telegramChat = getChat(chatID);
+        telegramChat.addUser(new TelegramUser(user));
     }
 
 
@@ -147,9 +161,10 @@ public class DataManager {
     public void save() {
         try {
             Gson gson = new Gson();
-            for (Map.Entry<String, TreeList<TelegramUser>> entry : chatUserMap.entrySet()) {
+            for (Map.Entry<String, TelegramChat> entry : chatUserMap.entrySet()) {
                 String chatID = entry.getKey();
-                TreeList<TelegramUser> users = entry.getValue();
+                TelegramChat telegramChat = entry.getValue();
+                List<TelegramUser> users = telegramChat.getUsers();
 
                 String currentPath = String.format("%s%sData%s%s", System.getProperty("user.dir"), File.separator, File.separator, chatID);
                 for (TelegramUser telegramUser : users) {

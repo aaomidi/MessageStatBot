@@ -57,11 +57,20 @@ public class TelegramUser {
         do {
             int r = ThreadLocalRandom.current().nextInt(messages.size());
             tg = messages.get(r);
-        } while (tg.getMessage().length() < minCharacters && (count++ < 10000 || count < messages.size()));
+        }
+        while (tg.getType() != TelegramMessage.Type.TEXT_MESSAGE && tg.getMessage().length() < minCharacters && (count++ < 10000 || count < messages.size()));
 
         if (tg.getMessage().length() < minCharacters) return null;
 
         return tg;
+    }
+
+    public List<TelegramMessage> getTextMessages() {
+        List<TelegramMessage> list = new TreeList<>();
+
+        this.getMessages().stream().filter(t -> t.getType() == TelegramMessage.Type.TEXT_MESSAGE).forEach(list::add);
+
+        return list;
     }
 
     public void say(TelegramMessage msg) {

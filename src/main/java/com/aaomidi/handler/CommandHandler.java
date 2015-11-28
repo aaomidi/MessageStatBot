@@ -1,10 +1,7 @@
 package com.aaomidi.handler;
 
 import com.aaomidi.MessageStatBot;
-import com.aaomidi.commands.GetMessagesCommand;
-import com.aaomidi.commands.PingAllCommand;
-import com.aaomidi.commands.StatCounter;
-import com.aaomidi.commands.TopUsersCommand;
+import com.aaomidi.commands.*;
 import com.aaomidi.model.TelegramCommand;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 import pro.zackpollard.telegrambot.api.event.chat.message.TextMessageReceivedEvent;
@@ -29,6 +26,10 @@ public class CommandHandler {
         statCounter = new StatCounter(instance, "statcounter", "Does nothing");
         new GetMessagesCommand(instance, "getmessages", "");
         new TopUsersCommand(instance, "topusers", "");
+        new TopWordsCommand(instance, "topwords", "");
+        new DeveloperCommand(instance, "developer", "");
+        new RandomMessageCommand(instance, "randommessage", "");
+        new InfoCommand(instance, "info", "");
         // new PingAllCommand(instance, "pingall", "");
     }
 
