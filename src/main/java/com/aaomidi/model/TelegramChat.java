@@ -19,4 +19,6 @@ public class TelegramChat {
     public void addUser(TelegramUser x) {
         users.add(x);
     }
+
+    //TODO: Move methods like topUsers and topWords here!
 }
