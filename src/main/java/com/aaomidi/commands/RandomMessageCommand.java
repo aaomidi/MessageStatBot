@@ -5,7 +5,6 @@ import com.aaomidi.model.TelegramCommand;
 import com.aaomidi.model.TelegramUser;
 import com.aaomidi.util.IntegerConverter;
 import com.aaomidi.util.LogHandler;
-import org.apache.commons.collections4.list.TreeList;
 import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 
@@ -54,7 +53,7 @@ public class RandomMessageCommand extends TelegramCommand {
         String randomMessage;
 
         if (minChar != null) {
-            randomMessage = telegramUser.getRandomMessage(minChar).toString();
+            randomMessage = telegramUser.getRandomMessage(minChar).getMessage();
         } else {
             randomMessage = telegramUser.getRandomMessage().getMessage();
         }

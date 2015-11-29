@@ -6,7 +6,8 @@
 
 ## Maven
 target/
-Data/
+Data
+Data/*
 dependency-reduced-pom.xml
 
 ## NetBeans
