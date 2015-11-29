@@ -1,6 +1,7 @@
 package com.aaomidi.commands;
 
 import com.aaomidi.MessageStatBot;
+import com.aaomidi.model.TelegramChat;
 import com.aaomidi.model.TelegramCommand;
 import com.aaomidi.model.TelegramUser;
 import pro.zackpollard.telegrambot.api.chat.Chat;
@@ -19,12 +20,13 @@ public class InfoCommand extends TelegramCommand {
     @Override
     public void execute(CommandMessageReceivedEvent event) {
         Chat chat = event.getChat();
+        TelegramChat telegramChat = getInstance().getDataManager().getChat(chat.getId());
 
-        List<TelegramUser> telegramUsers = getInstance().getDataManager().getUsers(chat.getId());
+        List<TelegramUser> telegramUsers = telegramChat.getUsers();
 
         StringBuilder s = new StringBuilder("Here is what I know so far!");
         s.append(String.format("\nThis chat has an ID of %s and I know %d users so far!", chat.getId(), telegramUsers.size()));
-       // s.append(String.format("\nThere have been a total of %d message sent by all the users!"))
+        s.append(String.format("\nThere have been a total of %d message sent by all the users!", telegramChat.getAllMessages().size()));
         chat.sendMessage(s.toString(), getTelegramBot());
 
     }

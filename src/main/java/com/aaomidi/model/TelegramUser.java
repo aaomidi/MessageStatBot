@@ -16,7 +16,6 @@ public class TelegramUser {
     private final int id;
     @Getter
     private String name;
-    @Getter
     private String username;
     @Getter
     private List<TelegramMessage> messages = new TreeList<>();
@@ -27,6 +26,13 @@ public class TelegramUser {
     public TelegramUser(User user) {
         this.id = user.getId();
         updateInformation(user);
+    }
+
+    public String getUsername() {
+        if (username == null) return null;
+
+        if (username.equals("")) return null;
+        return username;
     }
 
     public void updateInformation(User user) {

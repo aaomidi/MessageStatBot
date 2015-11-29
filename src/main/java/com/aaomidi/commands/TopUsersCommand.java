@@ -1,13 +1,12 @@
 package com.aaomidi.commands;
 
 import com.aaomidi.MessageStatBot;
+import com.aaomidi.model.TelegramChat;
 import com.aaomidi.model.TelegramCommand;
 import com.aaomidi.model.TelegramUser;
-import org.apache.commons.collections4.list.TreeList;
 import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -21,43 +20,26 @@ public class TopUsersCommand extends TelegramCommand {
     @Override
     public void execute(CommandMessageReceivedEvent event) {
         Chat chat = event.getChat();
-        List<TelegramUser> users = getInstance().getDataManager().getUsers(chat.getId());
+        TelegramChat telegramChat = getInstance().getDataManager().getChat(chat.getId());
         StringBuilder sb = new StringBuilder();
 
+        String arg = "messages";
+        if (event.getArgs().length > 0) {
+            arg = event.getArgs()[0];
+        }
 
-        if (event.getArgs().length == 0) return;
+        switch (arg.toLowerCase()) {
 
-        switch (event.getArgs()[0].toLowerCase()) {
-            case "messages": {
-                Collections.sort(users, (o1, o2) -> {
-                    if (o1.getMessages().size() == o2.getMessages().size()) return 0;
-
-                    return o1.getMessages().size() > o2.getMessages().size() ? -1 : 1;
-                });
-
-                int i = 0;
-                for (TelegramUser user : users) {
-                    if (i++ == 5) break;
-                    sb.append(String.format("%d - %s", user.getMessages().size() , user.getName()));
-
-                    if (user.getUsername() != null) sb.append(String.format("(%s)", user.getUsername()));
-                    sb.append("\n");
-                }
-                break;
-            }
             case "words": {
-                Collections.sort(users, (o1, o2) -> {
-                    if (o1.getWordCount() == o2.getWordCount()) return 0;
-
-                    return o1.getWordCount() > o2.getWordCount() ? -1 : 1;
-                });
+                List<TelegramUser> list = telegramChat.getTopUsersByWordsCount();
 
                 int i = 0;
-                for (TelegramUser user : users) {
+                for (TelegramUser user : list) {
                     if (i++ == 5) break;
-                    sb.append(String.format("%d - %s", user.getWordCount() , user.getName()));
+                    sb.append(String.format("%d - %s", user.getWordCount(), user.getName()));
 
-                    if (user.getUsername() != null) sb.append(String.format("(%s)", user.getUsername()));
+                    if (user.getUsername() != null)
+                        sb.append(String.format(" - %s", user.getUsername()));
                     sb.append("\n");
                 }
                 break;
@@ -65,19 +47,32 @@ public class TopUsersCommand extends TelegramCommand {
             }
 
             case "ratio": {
-                Collections.sort(users, (o1, o2) -> {
-                    if (o1.getWordCount() / (double) o1.getMessages().size() == o2.getWordCount() / (double) o2.getMessages().size())
-                        return 0;
-
-                    return o1.getWordCount() / (double) o1.getMessages().size() > o2.getWordCount() / (double) o2.getMessages().size() ? -1 : 1;
-                });
+                List<TelegramUser> list = telegramChat.getTopUsersByRatio();
 
                 int i = 0;
-                for (TelegramUser user : users) {
+                for (TelegramUser user : list) {
                     if (i++ == 5) break;
                     sb.append(String.format("%.2f - %s", user.getWordCount() / (double) user.getMessages().size(), user.getName()));
 
-                    if (user.getUsername() != null) sb.append(String.format("(%s)", user.getUsername()));
+                    if (user.getUsername() != null)
+                        sb.append(String.format("- %s", user.getUsername()));
+                    sb.append("\n");
+                }
+                break;
+            }
+
+            case "messages":
+                // Follow to default
+            default: {
+                List<TelegramUser> list = telegramChat.getTopUsersByMessageCount();
+
+                int i = 0;
+                for (TelegramUser user : list) {
+                    if (i++ == 5) break;
+                    sb.append(String.format("%d - %s", user.getMessages().size(), user.getName()));
+
+                    if (user.getUsername() != null)
+                        sb.append(String.format(" - %s", user.getUsername()));
                     sb.append("\n");
                 }
                 break;

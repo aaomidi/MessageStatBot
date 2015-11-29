@@ -38,7 +38,7 @@ public class TelegramHook implements Listener {
 
     @Override
     public void onTextMessageReceived(TextMessageReceivedEvent event) {
-        LogHandler.logn("Message received %s: %s", event.getChat().getId(), event.getContent().getContent());
+        LogHandler.logn("Message received %s - %d: %s", event.getChat().getId(), event.getMessage().getSender().getId(), event.getContent().getContent());
 
         instance.getCommandHandler().handleText(event);
     }

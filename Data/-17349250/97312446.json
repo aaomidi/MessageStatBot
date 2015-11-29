@@ -1,1 +1,1561 @@
-{"id":97312446,"name":"Luke Anderson","username":"stuntguy3000","messages":[{"timestamp":1448684393,"id":2985,"message":"yup","type":"TEXT_MESSAGE"},{"timestamp":1448684397,"id":2986,"message":"good video 10/10","type":"TEXT_MESSAGE"},{"timestamp":1448684415,"id":2990,"message":"nice skype","type":"TEXT_MESSAGE"},{"timestamp":1448684439,"id":2992,"message":"w0t","type":"TEXT_MESSAGE"},{"timestamp":1448684442,"id":2993,"message":"Alien blue","type":"TEXT_MESSAGE"},{"timestamp":1448684452,"id":2994,"message":"@mattrick making lobbies are fun :D","type":"TEXT_MESSAGE"},{"timestamp":1448684488,"id":2998,"message":"nice","type":"TEXT_MESSAGE"},{"timestamp":1448684872,"id":3002,"message":"lel","type":"TEXT_MESSAGE"},{"timestamp":1448684895,"id":3005,"message":"@mattrick I forgot to mention, the bot is now @Telegames","type":"TEXT_MESSAGE"},{"timestamp":1448684900,"id":3006,"message":"@GroupGameBot was a lame name","type":"TEXT_MESSAGE"},{"timestamp":1448684909,"id":3009,"message":"too long","type":"TEXT_MESSAGE"},{"timestamp":1448685202,"id":3013,"message":"700 line class, fml @mattrick","type":"TEXT_MESSAGE"},{"timestamp":1448685222,"id":3016,"message":"I knew that would happen ahah","type":"TEXT_MESSAGE"},{"timestamp":1448685228,"id":3017,"message":"FUUUUUCK ME","type":"TEXT_MESSAGE"},{"timestamp":1448685625,"id":3023,"message":"@MazenK","type":"TEXT_MESSAGE"},{"timestamp":1448685641,"id":3025,"message":"lelel","type":"TEXT_MESSAGE"},{"timestamp":1448686037,"id":3037,"message":"nodejs is »»\u003ewebscale««\u003c","type":"TEXT_MESSAGE"},{"timestamp":1448686084,"id":3039,"message":"http://www.iflscience.com/editors-blog/bizarre-world-dinosaur-erotica-novels","type":"TEXT_MESSAGE"},{"timestamp":1448688379,"id":3052,"message":"@mattrick holy fuck the bot compiles","type":"TEXT_MESSAGE"},{"timestamp":1448709922,"id":3143,"message":"Longest url of the year award","type":"TEXT_MESSAGE"},{"timestamp":1448710143,"id":3150,"message":"help ","type":"COMMAND"},{"timestamp":1448710166,"id":3152,"message":"Lol amir","type":"TEXT_MESSAGE"},{"timestamp":1448710176,"id":3154,"message":"O.o","type":"TEXT_MESSAGE"},{"timestamp":1448710195,"id":3157,"message":"Post something","type":"TEXT_MESSAGE"},{"timestamp":1448710405,"id":3161,"message":"Yeah","type":"TEXT_MESSAGE"},{"timestamp":1448710418,"id":3162,"message":"A long time ago 😂😂😂😂","type":"TEXT_MESSAGE"},{"timestamp":1448710447,"id":3165,"message":"Yeah","type":"TEXT_MESSAGE"},{"timestamp":1448710465,"id":3169,"message":"What?","type":"TEXT_MESSAGE"},{"timestamp":1448710481,"id":3171,"message":"Ooo maybe","type":"TEXT_MESSAGE"},{"timestamp":1448710485,"id":3173,"message":"I will look into it","type":"TEXT_MESSAGE"},{"timestamp":1448710498,"id":3175,"message":"I will need a good way to detect when it expires","type":"TEXT_MESSAGE"},{"timestamp":1448710581,"id":3181,"message":"Over 30? I would make it 2 hours at least. Good idea though, PR if you want 😂😂😂","type":"TEXT_MESSAGE"},{"timestamp":1448710658,"id":3189,"message":"True ahahah","type":"TEXT_MESSAGE"},{"timestamp":1448710661,"id":3190,"message":"Fair enough","type":"TEXT_MESSAGE"},{"timestamp":1448710671,"id":3193,"message":"Can bots make channels or post to them?","type":"TEXT_MESSAGE"},{"timestamp":1448710694,"id":3201,"message":"Wot","type":"TEXT_MESSAGE"},{"timestamp":1448710697,"id":3203,"message":"Lol","type":"TEXT_MESSAGE"},{"timestamp":1448710739,"id":3211,"message":"Joined cheers","type":"TEXT_MESSAGE"},{"timestamp":1448710765,"id":3212,"message":"Another shooting? Fml","type":"TEXT_MESSAGE"},{"timestamp":1448710873,"id":3225,"message":"Go for it amir","type":"TEXT_MESSAGE"},{"timestamp":1448710885,"id":3229,"message":"I am at a party for two hours then home for time to work on the bot","type":"TEXT_MESSAGE"},{"timestamp":1448710892,"id":3232,"message":"Yeah yeah","type":"TEXT_MESSAGE"},{"timestamp":1448710903,"id":3234,"message":"(Y)","type":"TEXT_MESSAGE"},{"timestamp":1448710909,"id":3237,"message":"I will make you not admin","type":"TEXT_MESSAGE"},{"timestamp":1448710911,"id":3238,"message":"Bot","type":"TEXT_MESSAGE"},{"timestamp":1448710914,"id":3239,"message":"Fak","type":"TEXT_MESSAGE"},{"timestamp":1448721118,"id":3295,"message":"LOL","type":"TEXT_MESSAGE"}]}
+{
+  "id": 97312446,
+  "name": "Luke Anderson",
+  "username": "stuntguy3000",
+  "messages": [
+    {
+      "timestamp": 1448684393,
+      "id": 2985,
+      "message": "yup",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448684397,
+      "id": 2986,
+      "message": "good video 10/10",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448684415,
+      "id": 2990,
+      "message": "nice skype",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448684439,
+      "id": 2992,
+      "message": "w0t",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448684442,
+      "id": 2993,
+      "message": "Alien blue",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448684452,
+      "id": 2994,
+      "message": "@mattrick making lobbies are fun :D",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448684488,
+      "id": 2998,
+      "message": "nice",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448684872,
+      "id": 3002,
+      "message": "lel",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448684895,
+      "id": 3005,
+      "message": "@mattrick I forgot to mention, the bot is now @Telegames",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448684900,
+      "id": 3006,
+      "message": "@GroupGameBot was a lame name",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448684909,
+      "id": 3009,
+      "message": "too long",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448685202,
+      "id": 3013,
+      "message": "700 line class, fml @mattrick",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448685222,
+      "id": 3016,
+      "message": "I knew that would happen ahah",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448685228,
+      "id": 3017,
+      "message": "FUUUUUCK ME",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448685625,
+      "id": 3023,
+      "message": "@MazenK",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448685641,
+      "id": 3025,
+      "message": "lelel",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448686037,
+      "id": 3037,
+      "message": "nodejs is »»\u003ewebscale««\u003c",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448686084,
+      "id": 3039,
+      "message": "http://www.iflscience.com/editors-blog/bizarre-world-dinosaur-erotica-novels",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448688379,
+      "id": 3052,
+      "message": "@mattrick holy fuck the bot compiles",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448709922,
+      "id": 3143,
+      "message": "Longest url of the year award",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710143,
+      "id": 3150,
+      "message": "help ",
+      "type": "COMMAND"
+    },
+    {
+      "timestamp": 1448710166,
+      "id": 3152,
+      "message": "Lol amir",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710176,
+      "id": 3154,
+      "message": "O.o",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710195,
+      "id": 3157,
+      "message": "Post something",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710405,
+      "id": 3161,
+      "message": "Yeah",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710418,
+      "id": 3162,
+      "message": "A long time ago 😂😂😂😂",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710447,
+      "id": 3165,
+      "message": "Yeah",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710465,
+      "id": 3169,
+      "message": "What?",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710481,
+      "id": 3171,
+      "message": "Ooo maybe",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710485,
+      "id": 3173,
+      "message": "I will look into it",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710498,
+      "id": 3175,
+      "message": "I will need a good way to detect when it expires",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710581,
+      "id": 3181,
+      "message": "Over 30? I would make it 2 hours at least. Good idea though, PR if you want 😂😂😂",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710658,
+      "id": 3189,
+      "message": "True ahahah",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710661,
+      "id": 3190,
+      "message": "Fair enough",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710671,
+      "id": 3193,
+      "message": "Can bots make channels or post to them?",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710694,
+      "id": 3201,
+      "message": "Wot",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710697,
+      "id": 3203,
+      "message": "Lol",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710739,
+      "id": 3211,
+      "message": "Joined cheers",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710765,
+      "id": 3212,
+      "message": "Another shooting? Fml",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710873,
+      "id": 3225,
+      "message": "Go for it amir",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710885,
+      "id": 3229,
+      "message": "I am at a party for two hours then home for time to work on the bot",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710892,
+      "id": 3232,
+      "message": "Yeah yeah",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710903,
+      "id": 3234,
+      "message": "(Y)",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710909,
+      "id": 3237,
+      "message": "I will make you not admin",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710911,
+      "id": 3238,
+      "message": "Bot",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448710914,
+      "id": 3239,
+      "message": "Fak",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448721118,
+      "id": 3295,
+      "message": "LOL",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761764,
+      "id": 4561,
+      "message": "are you trying to sell me something",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761800,
+      "id": 4563,
+      "message": "This happens because you are sending a \"_\" without escaping it. If you use markdown, you need to escape all _ * ` that you don\u0027t want to be delimiters of markdown entities.",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761804,
+      "id": 4564,
+      "message": "The fuck does _ * ` mean",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761818,
+      "id": 4568,
+      "message": "UNO",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761819,
+      "id": 4569,
+      "message": "YES",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761819,
+      "id": 4570,
+      "message": "ME",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761824,
+      "id": 4572,
+      "message": "Cah sure :P",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761835,
+      "id": 4578,
+      "message": "but ` ?",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761845,
+      "id": 4581,
+      "message": "orlly",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761846,
+      "id": 4582,
+      "message": "lolk",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761852,
+      "id": 4583,
+      "message": "mzn is a fgt",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761853,
+      "id": 4584,
+      "message": "nice",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761878,
+      "id": 4589,
+      "message": "but mazen",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761879,
+      "id": 4590,
+      "message": "telegram cah",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761882,
+      "id": 4592,
+      "message": "SoonTM",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761894,
+      "id": 4596,
+      "message": "It is on my watch list",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761944,
+      "id": 4598,
+      "message": "Saw my mega commit?",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761956,
+      "id": 4600,
+      "message": "1500k lines modified",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761957,
+      "id": 4601,
+      "message": "yup",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448761960,
+      "id": 4604,
+      "message": "lelelel",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448762036,
+      "id": 4609,
+      "message": "LETS DO IT",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448762092,
+      "id": 4616,
+      "message": "Well shit.",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448762111,
+      "id": 4624,
+      "message": "yeah",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448762121,
+      "id": 4625,
+      "message": "will lower the number to 4 cards a line",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448762630,
+      "id": 4627,
+      "message": "@bo0tzz In this situation, ANY CARD can be played",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448762630,
+      "id": 4628,
+      "message": "Starting Round 1\n Current Card: 🌈 Wild\n Current Player: stuntguy3000",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448762630,
+      "id": 4629,
+      "message": "\u003eo\u003c",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448762649,
+      "id": 4632,
+      "message": "no like its implemented",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448762650,
+      "id": 4633,
+      "message": "lol",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448763671,
+      "id": 4661,
+      "message": "LOL",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448763671,
+      "id": 4663,
+      "message": "AHAHAHAH",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448763691,
+      "id": 4670,
+      "message": "wot",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764054,
+      "id": 4697,
+      "message": "@bo0tzz 140 rounds for one fucking message lawl",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764076,
+      "id": 4700,
+      "message": "so",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764082,
+      "id": 4701,
+      "message": "the lobby bot works",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764086,
+      "id": 4702,
+      "message": "No bugs, except for the markdown issue",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764089,
+      "id": 4704,
+      "message": "MOAR GAMES",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764116,
+      "id": 4708,
+      "message": "yeah",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764117,
+      "id": 4709,
+      "message": "it is",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764118,
+      "id": 4710,
+      "message": ":D",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764132,
+      "id": 4713,
+      "message": "mazen you havn\u0027t even seen my bot",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764139,
+      "id": 4715,
+      "message": "its pc masterrace standard",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764165,
+      "id": 4722,
+      "message": "omg",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764166,
+      "id": 4723,
+      "message": "mazen",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764168,
+      "id": 4724,
+      "message": "yes",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764181,
+      "id": 4727,
+      "message": "multiplayer minesweeper",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764183,
+      "id": 4728,
+      "message": "what could go wrong",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764209,
+      "id": 4731,
+      "message": "but like",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764218,
+      "id": 4733,
+      "message": "keyboards require a different input for each square",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764218,
+      "id": 4734,
+      "message": "lolol",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764227,
+      "id": 4736,
+      "message": "Joe, is your bot set to view all messages?",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764231,
+      "id": 4737,
+      "message": "Or only commands?",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764235,
+      "id": 4740,
+      "message": "LOL",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764237,
+      "id": 4743,
+      "message": "AHAHAHAHA",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764241,
+      "id": 4749,
+      "message": "LOL",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764243,
+      "id": 4752,
+      "message": "I AM SORRY XDDD",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764299,
+      "id": 4758,
+      "message": "wtf",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764369,
+      "id": 4766,
+      "message": "$",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764374,
+      "id": 4770,
+      "message": "Joe, how?",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764382,
+      "id": 4774,
+      "message": "You dont have to register commands",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764384,
+      "id": 4775,
+      "message": "so",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764389,
+      "id": 4777,
+      "message": "listen to the command event?!?!?!",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764401,
+      "id": 4782,
+      "message": "no",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764401,
+      "id": 4783,
+      "message": "now",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764404,
+      "id": 4784,
+      "message": "priority code issue",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764413,
+      "id": 4786,
+      "message": "no, $ is just stupid",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764417,
+      "id": 4788,
+      "message": "$ is shit you find in terminal",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764422,
+      "id": 4790,
+      "message": "good",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764429,
+      "id": 4793,
+      "message": "GG PERMISSIONS",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764434,
+      "id": 4794,
+      "message": "PERMISSIONSEX TELEGRAM EDITION",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764450,
+      "id": 4800,
+      "message": "$group user me op",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764455,
+      "id": 4802,
+      "message": "LEL",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764461,
+      "id": 4806,
+      "message": "NOPE",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764467,
+      "id": 4808,
+      "message": "$kick",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764473,
+      "id": 4809,
+      "message": "$ping",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764482,
+      "id": 4812,
+      "message": "$WHY NO ERROR MESSAGES WORSE THAN ZACK FML",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764486,
+      "id": 4815,
+      "message": "SPAM",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764488,
+      "id": 4817,
+      "message": "IS REAL",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764505,
+      "id": 4821,
+      "message": "also no they don\u0027t",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764508,
+      "id": 4823,
+      "message": "thats a bullshit number",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764510,
+      "id": 4825,
+      "message": "no fucking way",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764517,
+      "id": 4829,
+      "message": "PM command or gtfo",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764529,
+      "id": 4833,
+      "message": "(y) Code is pushed on github boet",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764538,
+      "id": 4839,
+      "message": "yep",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764544,
+      "id": 4841,
+      "message": "As said yesterday, I am bot happy",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764557,
+      "id": 4848,
+      "message": "https://github.com/stuntguy3000/telegames",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764561,
+      "id": 4851,
+      "message": "@MazenK best bot ^^^^^^^",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764567,
+      "id": 4853,
+      "message": "COOLEST NAME AWARD",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764572,
+      "id": 4854,
+      "message": "Telegames is fucking awesome",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764596,
+      "id": 4857,
+      "message": "\"bye lol\"",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764597,
+      "id": 4858,
+      "message": "mfw",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764796,
+      "id": 4895,
+      "message": "pleb tier api",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764808,
+      "id": 4898,
+      "message": "Kidding zack ❤️",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764815,
+      "id": 4900,
+      "message": "yeah without tictactoe",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764819,
+      "id": 4904,
+      "message": "LOL",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764825,
+      "id": 4907,
+      "message": ":D",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764834,
+      "id": 4910,
+      "message": "Understand the mess known as the api? [mine]",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764835,
+      "id": 4911,
+      "message": "kekek",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764845,
+      "id": 4913,
+      "message": "IT HAS JAVADOC",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764850,
+      "id": 4916,
+      "message": "GG",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764852,
+      "id": 4917,
+      "message": "700 lines",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764994,
+      "id": 4928,
+      "message": "yup",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448764998,
+      "id": 4929,
+      "message": "Make an object",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765003,
+      "id": 4931,
+      "message": "BoardPiece",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765020,
+      "id": 4934,
+      "message": "are they actually \"tics\" and \"tacs\"",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765022,
+      "id": 4936,
+      "message": "lawl",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765067,
+      "id": 4941,
+      "message": "card deck shit?",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765068,
+      "id": 4942,
+      "message": "wot",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765071,
+      "id": 4945,
+      "message": "elaborate",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765081,
+      "id": 4948,
+      "message": "4am confirmed",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765100,
+      "id": 4954,
+      "message": "joe nice avatar fgt",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765112,
+      "id": 4956,
+      "message": "it looks like your soul",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765115,
+      "id": 4957,
+      "message": ":D",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765116,
+      "id": 4958,
+      "message": "❤️",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765142,
+      "id": 4964,
+      "message": "Boet chuck em in the Util class if you want",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765145,
+      "id": 4965,
+      "message": "look pretty handy",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765151,
+      "id": 4967,
+      "message": "Util.Cards pls",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765164,
+      "id": 4969,
+      "message": "mfw poker",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765166,
+      "id": 4972,
+      "message": "mfw blackjack",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765171,
+      "id": 4974,
+      "message": "LETS FUCKING TURN THIS INTO A CASINO",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765181,
+      "id": 4977,
+      "message": "omg",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765189,
+      "id": 4979,
+      "message": "Telegame Coins",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765201,
+      "id": 4981,
+      "message": "@bo0tzz Remember when I said I will attach a buycraft instance? ayy lamo",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765204,
+      "id": 4982,
+      "message": "found a usage",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765212,
+      "id": 4987,
+      "message": "group ",
+      "type": "COMMAND"
+    },
+    {
+      "timestamp": 1448765219,
+      "id": 4990,
+      "message": "prefix §",
+      "type": "COMMAND"
+    },
+    {
+      "timestamp": 1448765235,
+      "id": 4992,
+      "message": "o_o",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765242,
+      "id": 4997,
+      "message": "LOL",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765252,
+      "id": 4999,
+      "message": "**\n * Created by bo0tzz\n */",
+      "type": "COMMAND"
+    },
+    {
+      "timestamp": 1448765282,
+      "id": 5004,
+      "message": "Boet don\u0027t add the cards into your commit, I will do it and add blackjack",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765284,
+      "id": 5006,
+      "message": "--now--",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765295,
+      "id": 5011,
+      "message": "yours sure",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765314,
+      "id": 5016,
+      "message": "telegram",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765314,
+      "id": 5017,
+      "message": "irl",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765347,
+      "id": 5024,
+      "message": "https://github.com/bo0tzz/Util/blob/master/src/com/bo0tzz/util/cards/Suit.java",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765351,
+      "id": 5026,
+      "message": "SPADES or SPADE",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765383,
+      "id": 5037,
+      "message": "ahaha",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765390,
+      "id": 5039,
+      "message": "boet he is being sarcastic",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765391,
+      "id": 5040,
+      "message": "ssshhhh",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765393,
+      "id": 5042,
+      "message": "back to coding",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765405,
+      "id": 5047,
+      "message": "LOL",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765406,
+      "id": 5048,
+      "message": "COADING",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765407,
+      "id": 5049,
+      "message": "im done",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765440,
+      "id": 5062,
+      "message": "get TV hacker images",
+      "type": "COMMAND"
+    },
+    {
+      "timestamp": 1448765446,
+      "id": 5064,
+      "message": "get typical hacker",
+      "type": "COMMAND"
+    },
+    {
+      "timestamp": 1448765491,
+      "id": 5072,
+      "message": "risky click of the day",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765511,
+      "id": 5074,
+      "message": "r/nocontext ",
+      "type": "COMMAND"
+    },
+    {
+      "timestamp": 1448765519,
+      "id": 5078,
+      "message": "Wait it is?",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765521,
+      "id": 5079,
+      "message": "FUCK ME IT IS",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765633,
+      "id": 5089,
+      "message": "Great song fyi",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765656,
+      "id": 5093,
+      "message": "joe welcome to telegerma",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765658,
+      "id": 5094,
+      "message": "telegram",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765668,
+      "id": 5098,
+      "message": "LELEL",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765671,
+      "id": 5100,
+      "message": "oi",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765678,
+      "id": 5103,
+      "message": "actually my bot isnt in this chat",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765714,
+      "id": 5111,
+      "message": "spotify:track:0r4SsYcwvd8URat6AS2m6f",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765717,
+      "id": 5113,
+      "message": "gooder song",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765722,
+      "id": 5114,
+      "message": "@aaomidi works ❤️",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765733,
+      "id": 5117,
+      "message": "lel",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448765759,
+      "id": 5127,
+      "message": "Joe, let me show you the bot playground",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448766100,
+      "id": 5175,
+      "message": "WHO HAS A SHITTY USERNAME",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448766110,
+      "id": 5177,
+      "message": "fml zack",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448766113,
+      "id": 5178,
+      "message": "fix your shit",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448766246,
+      "id": 5189,
+      "message": "euro telegram",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448772237,
+      "id": 5295,
+      "message": "lawl",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448774931,
+      "id": 5306,
+      "message": "♠️♣️♥️♦️",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448784125,
+      "id": 5349,
+      "message": "chat is ded today",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448785783,
+      "id": 5351,
+      "message": "UR ALL FGTS",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448787467,
+      "id": 5352,
+      "message": "When my mum thinks I have queued up Adele on the sound system",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448787477,
+      "id": 5354,
+      "message": "she is in for a surprise",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448799011,
+      "id": 5491,
+      "message": "search bby",
+      "type": "COMMAND"
+    },
+    {
+      "timestamp": 1448799036,
+      "id": 5496,
+      "message": "243 bytes?",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448799037,
+      "id": 5498,
+      "message": "DAMN",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448799045,
+      "id": 5500,
+      "message": "yup :P",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448799052,
+      "id": 5501,
+      "message": "Clearly spotify doesnt have a preview for it",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448799630,
+      "id": 5513,
+      "message": "so on a watchlist now",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448805143,
+      "id": 5748,
+      "message": "I\u0027m sorry?",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448805150,
+      "id": 5750,
+      "message": "lel",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448805293,
+      "id": 5755,
+      "message": "Lol?",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448805314,
+      "id": 5761,
+      "message": "That is attack on free speech amir",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448805502,
+      "id": 5779,
+      "message": "boet can we test pls",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448805523,
+      "id": 5781,
+      "message": "FUCK",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448805528,
+      "id": 5782,
+      "message": "fuck your friends",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806551,
+      "id": 5850,
+      "message": "HELLO",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806583,
+      "id": 5860,
+      "message": "What can I do for you Mazen :D",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806609,
+      "id": 5870,
+      "message": "Possibly 1am. That\u0027s not an issue though.",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806614,
+      "id": 5872,
+      "message": "What\u0027s up",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806669,
+      "id": 5886,
+      "message": "Yeah tons. The lobby system is in place, all games now live in PM only. Uno is almost done, but it does work with no errors (more testing).",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806691,
+      "id": 5894,
+      "message": "Blackjack needs to be tested, but the whole bot appears pretty solid.",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806703,
+      "id": 5901,
+      "message": "You don\u0027t",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806710,
+      "id": 5902,
+      "message": "Yeah that lol",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806719,
+      "id": 5903,
+      "message": "My mums phone xd",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806751,
+      "id": 5905,
+      "message": "(Mazen are you aware about the lobby system?)",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806849,
+      "id": 5911,
+      "message": "Basically you can create a lobby. You are given a lobby ID which players can join via command. Once in a lobby, you can chat and start any game. The whole game is played in the lobby. Game over then returns to lobby ready for another. \n\nSure maybe joe. Code is open source FYI",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806872,
+      "id": 5916,
+      "message": "The whole lobby exists via PM with the the bot",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806891,
+      "id": 5920,
+      "message": "No group required like before",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806922,
+      "id": 5925,
+      "message": "I like a general reaction game idea",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806927,
+      "id": 5928,
+      "message": "Press the green button",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806934,
+      "id": 5930,
+      "message": "Etc",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806938,
+      "id": 5932,
+      "message": "Lol joe",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806943,
+      "id": 5934,
+      "message": "800 down 13 up",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806965,
+      "id": 5940,
+      "message": "Those numbers are in kb/s. KILL ME.",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806971,
+      "id": 5941,
+      "message": "13 KB UPLOAD FML",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806981,
+      "id": 5946,
+      "message": "Kilobyte",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806984,
+      "id": 5948,
+      "message": "Not bit",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448806987,
+      "id": 5950,
+      "message": "Byte",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448807156,
+      "id": 5975,
+      "message": "The vessel iPad app shit",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448807176,
+      "id": 5979,
+      "message": "It\u0027s so bad it changes rotation while rotation lock IS ON",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448807183,
+      "id": 5980,
+      "message": "Free 2 year suck it",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448807208,
+      "id": 5988,
+      "message": "I won\u0027t pay for content lol",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448807217,
+      "id": 5990,
+      "message": "YouTube is just full of shit",
+      "type": "TEXT_MESSAGE"
+    },
+    {
+      "timestamp": 1448807246,
+      "id": 5993,
+      "message": "Lol nice",
+      "type": "TEXT_MESSAGE"
+    }
+  ]
+}

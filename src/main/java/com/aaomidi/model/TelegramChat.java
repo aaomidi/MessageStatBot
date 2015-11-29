@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.collections4.list.TreeList;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -20,5 +21,47 @@ public class TelegramChat {
         users.add(x);
     }
 
-    //TODO: Move methods like topUsers and topWords here!
+    public List<TelegramMessage> getAllMessages() {
+        List<TelegramMessage> messages = new TreeList<>();
+        users.stream().forEach(t -> messages.addAll(t.getMessages()));
+
+        return messages;
+    }
+
+    public List<TelegramUser> getTopUsersByMessageCount() {
+        List<TelegramUser> list = new TreeList<>(users);
+
+        Collections.sort(list, (o1, o2) -> {
+            if (o1.getMessages().size() == o2.getMessages().size()) return 0;
+
+            return o1.getMessages().size() > o2.getMessages().size() ? -1 : 1;
+        });
+
+        return list;
+    }
+
+    public List<TelegramUser> getTopUsersByRatio() {
+        List<TelegramUser> list = new TreeList<>(users);
+
+        Collections.sort(list, (o1, o2) -> {
+            if (o1.getWordCount() / (double) o1.getMessages().size() == o2.getWordCount() / (double) o2.getMessages().size())
+                return 0;
+
+            return o1.getWordCount() / (double) o1.getMessages().size() > o2.getWordCount() / (double) o2.getMessages().size() ? -1 : 1;
+        });
+
+        return list;
+    }
+
+    public List<TelegramUser> getTopUsersByWordsCount() {
+        List<TelegramUser> list = new TreeList<>(users);
+
+        Collections.sort(list, (o1, o2) -> {
+            if (o1.getWordCount() == o2.getWordCount()) return 0;
+
+            return o1.getWordCount() > o2.getWordCount() ? -1 : 1;
+        });
+
+        return list;
+    }
 }
