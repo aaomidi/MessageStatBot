@@ -1,5 +1,6 @@
 package com.aaomidi.model;
 
+import com.aaomidi.util.LogHandler;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.collections4.list.TreeList;
@@ -61,6 +62,7 @@ public class TelegramUser {
         TelegramMessage tg;
 
         do {
+            LogHandler.logn("A");
             int r = ThreadLocalRandom.current().nextInt(messages.size());
             tg = messages.get(r);
         }
