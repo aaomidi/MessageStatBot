@@ -1,6 +1,5 @@
 package com.aaomidi.model;
 
-import com.aaomidi.util.LogHandler;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.collections4.list.TreeList;
@@ -62,11 +61,10 @@ public class TelegramUser {
         TelegramMessage tg;
 
         do {
-            LogHandler.logn("A");
             int r = ThreadLocalRandom.current().nextInt(messages.size());
             tg = messages.get(r);
         }
-        while (tg.getType() != TelegramMessage.Type.TEXT_MESSAGE && tg.getMessage().length() < minCharacters && (count++ < 10000 || count < messages.size()));
+        while (tg.getType() != TelegramMessage.Type.TEXT_MESSAGE || tg.getMessage().length() < minCharacters && (count++ < 10000 || count < messages.size()));
 
         if (tg.getMessage().length() < minCharacters) return null;
 
