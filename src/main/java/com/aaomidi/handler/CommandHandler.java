@@ -2,7 +2,9 @@ package com.aaomidi.handler;
 
 import com.aaomidi.MessageStatBot;
 import com.aaomidi.commands.*;
+import com.aaomidi.model.TelegramChat;
 import com.aaomidi.model.TelegramCommand;
+import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.chat.message.send.SendableTextMessage;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 import pro.zackpollard.telegrambot.api.event.chat.message.TextMessageReceivedEvent;
@@ -26,15 +28,17 @@ public class CommandHandler {
 
     public void registerCommands() {
         statCounter = new StatCounter(instance, "statcounter", "Does nothing");
-        new GetMessagesCommand(instance, "getmessages", "");
-        new TopUsersCommand(instance, "topusers", "");
-        new TopWordsCommand(instance, "topwords", "");
-        new DeveloperCommand(instance, "developer", "");
-        new RandomMessageCommand(instance, "randommessage", "");
-        new InfoCommand(instance, "info", "");
-        new ListUsersCommand(instance, "listall", "", "listusers");
-        new PingAllCommand(instance, "pingall", "", true);
-        new PromoteCommand(instance, "promote", "", true);
+
+        new DemoteCommand(instance, "demote", "Demotes a user.", true, true);
+        //new GetMessagesCommand(instance, "getmessages", "");
+        new TopUsersCommand(instance, "topusers", "Sends the top users of this chat.");
+        new TopWordsCommand(instance, "topwords", "Sends the most words used in this chat.");
+        new DeveloperCommand(instance, "developer", "Sends information about the developer of this bot.");
+        new RandomMessageCommand(instance, "randommessage", "Sends a random message from the specified user.");
+        new InfoCommand(instance, "info", "Sends information about this chat.");
+        new ListUsersCommand(instance, "listall", "Sends the list of all known users.", "listusers");
+        new PingAllCommand(instance, "pingall", "Pings all users.", true);
+        new PromoteCommand(instance, "promote", "Promotes a user.", true, true);
     }
 
     public void registerCommand(TelegramCommand telegramCommand) {
@@ -53,11 +57,13 @@ public class CommandHandler {
         String cmdString = event.getCommand();
         cmdString = cmdString.toLowerCase();
         User user = event.getMessage().getSender();
+        Chat chat = event.getChat();
 
+        TelegramChat telegramChat = instance.getDataManager().getChat(chat.getId());
         TelegramCommand command = commands.get(cmdString);
 
         if (command == null) return;
-        if (command.isAdminCommand() && !instance.getDataManager().isAdmin(user)) {
+        if (command.isGlobalAdminCommand() && !instance.getDataManager().isAdmin(user) || command.isLocalAdminCommand() && !telegramChat.isAdmin(user.getId())) {
             SendableTextMessage noPermsMessage = SendableTextMessage.builder()
                     .message("You do not have permissions to execute that command " + user.getFullName())
                     .replyTo(event.getMessage())

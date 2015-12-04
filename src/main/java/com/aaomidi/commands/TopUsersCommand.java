@@ -13,6 +13,8 @@ import java.util.List;
  * Created by amir on 2015-11-27.
  */
 public class TopUsersCommand extends TelegramCommand {
+    private final static int NUM_OF_USER = 20;
+
     public TopUsersCommand(MessageStatBot instance, String name, String description, String... aliases) {
         super(instance, name, description, aliases);
     }
@@ -35,7 +37,7 @@ public class TopUsersCommand extends TelegramCommand {
 
                 int i = 0;
                 for (TelegramUser user : list) {
-                    if (i++ == 5) break;
+                    if (i++ == NUM_OF_USER) break;
                     sb.append(String.format("%d - %s", user.getWordCount(), user.getName()));
 
                     if (user.getUsername() != null)
@@ -51,7 +53,7 @@ public class TopUsersCommand extends TelegramCommand {
 
                 int i = 0;
                 for (TelegramUser user : list) {
-                    if (i++ == 5) break;
+                    if (i++ == NUM_OF_USER) break;
                     sb.append(String.format("%.2f - %s", user.getWordCount() / (double) user.getMessages().size(), user.getName()));
 
                     if (user.getUsername() != null)
@@ -68,7 +70,7 @@ public class TopUsersCommand extends TelegramCommand {
 
                 int i = 0;
                 for (TelegramUser user : list) {
-                    if (i++ == 5) break;
+                    if (i++ == NUM_OF_USER) break;
                     sb.append(String.format("%d - %s", user.getMessages().size(), user.getName()));
 
                     if (user.getUsername() != null)

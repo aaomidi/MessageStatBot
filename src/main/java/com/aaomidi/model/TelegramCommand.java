@@ -1,6 +1,7 @@
 package com.aaomidi.model;
 
 import com.aaomidi.MessageStatBot;
+import com.aaomidi.util.LogHandler;
 import lombok.Getter;
 import pro.zackpollard.telegrambot.api.TelegramBot;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
@@ -17,25 +18,50 @@ public abstract class TelegramCommand {
     @Getter
     private final String description;
     @Getter
-    private final String[] aliases;
+    private final boolean globalAdminCommand;
     @Getter
-    private final boolean adminCommand;
+    private final boolean localAdminCommand;
+    @Getter
+    private final String[] aliases;
 
+    public TelegramCommand(MessageStatBot instance, String name, String description, boolean globalAdminCommand, boolean localAdminCommand, String... aliases) {
+        this.instance = instance;
+        this.name = name;
+        this.description = description;
+        this.globalAdminCommand = globalAdminCommand;
+        this.localAdminCommand = localAdminCommand;
+        this.aliases = aliases;
 
+        // Auto register commands
+        this.instance.getCommandHandler().registerCommand(this);
+        this.generateBotFatherString();
+
+    }
+
+    /**
+     * Registers a normal command
+     *
+     * @param instance
+     * @param name
+     * @param description
+     * @param aliases
+     */
     public TelegramCommand(MessageStatBot instance, String name, String description, String... aliases) {
         this(instance, name, description, false, aliases);
     }
 
-    public TelegramCommand(MessageStatBot instance, String name, String description, boolean isAdminCommand, String... aliases) {
+    /**
+     * Registers a locally admin command
+     *
+     * @param instance
+     * @param name
+     * @param description
+     * @param localAdminCommand
+     * @param aliases
+     */
+    public TelegramCommand(MessageStatBot instance, String name, String description, boolean localAdminCommand, String... aliases) {
 
-        this.instance = instance;
-        this.name = name;
-        this.description = description;
-        this.adminCommand = isAdminCommand;
-        this.aliases = aliases;
-
-        //Auto command register
-        this.instance.getCommandHandler().registerCommand(this);
+        this(instance, name, description, false, localAdminCommand, aliases);
 
     }
 
@@ -48,5 +74,9 @@ public abstract class TelegramCommand {
 
     protected TelegramBot getTelegramBot() {
         return instance.getTelegramHook().getBot();
+    }
+
+    public void generateBotFatherString() {
+        LogHandler.logn("%s - %s", getName(), getDescription());
     }
 }

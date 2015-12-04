@@ -13,10 +13,8 @@ import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceived
 /**
  * Created by amir on 2015-12-05.
  */
-public class PromoteCommand extends TelegramCommand {
-
-
-    public PromoteCommand(MessageStatBot instance, String name, String description, boolean globalAdminCommand, boolean localAdminCommand, String... aliases) {
+public class DemoteCommand extends TelegramCommand {
+    public DemoteCommand(MessageStatBot instance, String name, String description, boolean globalAdminCommand, boolean localAdminCommand, String... aliases) {
         super(instance, name, description, globalAdminCommand, localAdminCommand, aliases);
     }
 
@@ -51,7 +49,7 @@ public class PromoteCommand extends TelegramCommand {
             return;
         }
 
-        user.setIsAdmin(true);
+        user.setIsAdmin(false);
         chat.sendMessage(successMessage, getTelegramBot());
     }
 }

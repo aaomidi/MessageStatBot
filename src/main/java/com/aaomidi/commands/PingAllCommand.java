@@ -12,8 +12,10 @@ import java.util.List;
  * Created by amir on 2015-11-27.
  */
 public class PingAllCommand extends TelegramCommand {
-    public PingAllCommand(MessageStatBot instance, String name, String description, boolean isAdminCommand, String... aliases) {
-        super(instance, name, description, isAdminCommand, aliases);
+
+
+    public PingAllCommand(MessageStatBot instance, String name, String description, boolean localAdminCommand, String... aliases) {
+        super(instance, name, description, localAdminCommand, aliases);
     }
 
     @Override

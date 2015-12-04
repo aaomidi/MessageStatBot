@@ -18,7 +18,7 @@ import java.util.TreeMap;
 public class DataManager {
     // <ChatID, UserID>
     private Map<String, TelegramChat> chatUserMap = new TreeMap<>();
-    private List<Integer> admins = new TreeList<>();
+    private List<Integer> globalAdmins = new TreeList<>();
 
     public DataManager() {
         String currentPath = System.getProperty("user.dir");
@@ -31,7 +31,7 @@ public class DataManager {
     }
 
     private void loadAdmins() {
-        admins.add(55395012);
+        globalAdmins.add(55395012);
     }
 
 
@@ -199,8 +199,12 @@ public class DataManager {
     }
 
     public boolean isAdmin(User user) {
-        for (Integer i : admins) {
-            if (i.equals(user.getId())) {
+        return isAdmin(user.getId());
+    }
+
+    public boolean isAdmin(int id) {
+        for (Integer i : globalAdmins) {
+            if (i.equals(id)) {
                 return true;
             }
         }

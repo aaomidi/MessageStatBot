@@ -26,6 +26,15 @@ public class TelegramChat {
         return users.stream().filter(user -> user.isAdmin()).collect(Collectors.toCollection(() -> new TreeList<>()));
     }
 
+    public boolean isAdmin(int userID) {
+        try {
+            TelegramUser tu = getAdmins().stream().filter(t -> t.getId() == userID).findFirst().get();
+            return tu != null && tu.isAdmin();
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+
     public List<TelegramMessage> getAllMessages() {
         List<TelegramMessage> messages = new TreeList<>();
         users.stream().forEach(t -> messages.addAll(t.getMessages()));
