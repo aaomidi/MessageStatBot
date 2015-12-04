@@ -4,6 +4,7 @@ import com.aaomidi.model.TelegramChat;
 import com.aaomidi.model.TelegramUser;
 import com.aaomidi.util.LogHandler;
 import com.google.gson.Gson;
+import org.apache.commons.collections4.list.TreeList;
 import pro.zackpollard.telegrambot.api.user.User;
 
 import java.io.*;
@@ -17,6 +18,7 @@ import java.util.TreeMap;
 public class DataManager {
     // <ChatID, UserID>
     private Map<String, TelegramChat> chatUserMap = new TreeMap<>();
+    private List<Integer> admins = new TreeList<>();
 
     public DataManager() {
         String currentPath = System.getProperty("user.dir");
@@ -25,6 +27,11 @@ public class DataManager {
         createFile(currentPath, true);
 
         this.loadData();
+        this.loadAdmins();
+    }
+
+    private void loadAdmins() {
+        admins.add(55395012);
     }
 
 
@@ -189,5 +196,14 @@ public class DataManager {
             ex.printStackTrace();
         }
 
+    }
+
+    public boolean isAdmin(User user) {
+        for (Integer i : admins) {
+            if (i.equals(user.getId())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -18,17 +18,27 @@ public abstract class TelegramCommand {
     private final String description;
     @Getter
     private final String[] aliases;
+    @Getter
+    private final boolean adminCommand;
 
 
     public TelegramCommand(MessageStatBot instance, String name, String description, String... aliases) {
+        this(instance, name, description, false, aliases);
+    }
+
+    public TelegramCommand(MessageStatBot instance, String name, String description, boolean isAdminCommand, String... aliases) {
+
         this.instance = instance;
         this.name = name;
         this.description = description;
+        this.adminCommand = isAdminCommand;
         this.aliases = aliases;
 
         //Auto command register
         this.instance.getCommandHandler().registerCommand(this);
+
     }
+
 
     public abstract void execute(CommandMessageReceivedEvent event);
 

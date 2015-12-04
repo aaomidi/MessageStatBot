@@ -20,12 +20,18 @@ public class TelegramUser {
     @Getter
     private List<TelegramMessage> messages = new TreeList<>();
     @Getter
+    private boolean isAdmin = false;
+    @Getter
     @Setter
     private transient boolean changesMade = false;
-
     public TelegramUser(User user) {
         this.id = user.getId();
         updateInformation(user);
+    }
+
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+        setChangesMade(true);
     }
 
     public String getUsername() {

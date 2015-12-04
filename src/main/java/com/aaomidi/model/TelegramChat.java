@@ -6,6 +6,7 @@ import org.apache.commons.collections4.list.TreeList;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by amir on 2015-11-29.
@@ -21,11 +22,19 @@ public class TelegramChat {
         users.add(x);
     }
 
+    public List<TelegramUser> getAdmins() {
+        return users.stream().filter(user -> user.isAdmin()).collect(Collectors.toCollection(() -> new TreeList<>()));
+    }
+
     public List<TelegramMessage> getAllMessages() {
         List<TelegramMessage> messages = new TreeList<>();
         users.stream().forEach(t -> messages.addAll(t.getMessages()));
 
         return messages;
+    }
+
+    public TelegramUser getUser(int userID) {
+        return users.stream().filter(u -> u.getId() == userID).findFirst().get();
     }
 
     public List<TelegramUser> getTopUsersByMessageCount() {

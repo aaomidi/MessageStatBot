@@ -2,11 +2,19 @@ package com.aaomidi.commands;
 
 import com.aaomidi.MessageStatBot;
 import com.aaomidi.model.TelegramCommand;
+import com.aaomidi.model.TelegramMessage;
 import com.aaomidi.model.TelegramUser;
 import com.aaomidi.util.IntegerConverter;
 import com.aaomidi.util.LogHandler;
+import pro.zackpollard.telegrambot.api.TelegramBot;
 import pro.zackpollard.telegrambot.api.chat.Chat;
+import pro.zackpollard.telegrambot.api.chat.ChatType;
+import pro.zackpollard.telegrambot.api.chat.message.Message;
+import pro.zackpollard.telegrambot.api.chat.message.content.Content;
+import pro.zackpollard.telegrambot.api.chat.message.send.SendableForwardMessage;
+import pro.zackpollard.telegrambot.api.chat.message.send.SendableMessage;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
+import pro.zackpollard.telegrambot.api.user.User;
 
 import java.util.List;
 
@@ -50,16 +58,74 @@ public class RandomMessageCommand extends TelegramCommand {
 
         if (telegramUser == null) return;
 
-        String randomMessage;
+        TelegramMessage randomMessage;
 
         if (minChar != null) {
-            randomMessage = telegramUser.getRandomMessage(minChar).getMessage();
+            randomMessage = telegramUser.getRandomMessage(minChar);
         } else {
-            randomMessage = telegramUser.getRandomMessage().getMessage();
+            randomMessage = telegramUser.getRandomMessage();
         }
 
         if (randomMessage == null) return;
 
-        chat.sendMessage(randomMessage, getTelegramBot());
+        SendableForwardMessage forwardMessage = SendableForwardMessage.builder()
+                .forwardedMessage(new Message() {
+                    @Override
+                    public int getMessageId() {
+                        return randomMessage.getId();
+                    }
+
+                    @Override
+                    public int getTimeStamp() {
+                        return 0;
+                    }
+
+                    @Override
+                    public User getSender() {
+                        return null;
+                    }
+
+                    @Override
+                    public Chat getChat() {
+                        return new Chat() {
+                            @Override
+                            public String getId() {
+                                return chat.getId();
+                            }
+
+                            @Override
+                            public ChatType getType() {
+                                return null;
+                            }
+
+                            @Override
+                            public Message sendMessage(SendableMessage sendableMessage, TelegramBot telegramBot) {
+                                return null;
+                            }
+                        };
+                    }
+
+                    @Override
+                    public User getForwardedFrom() {
+                        return null;
+                    }
+
+                    @Override
+                    public int getForwardedDate() {
+                        return 0;
+                    }
+
+                    @Override
+                    public Message getRepliedTo() {
+                        return null;
+                    }
+
+                    @Override
+                    public Content getContent() {
+                        return null;
+                    }
+                }).build();
+
+        chat.sendMessage(forwardMessage, getTelegramBot());
     }
 }
