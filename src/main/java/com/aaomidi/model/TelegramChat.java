@@ -46,6 +46,24 @@ public class TelegramChat {
         return users.stream().filter(u -> u.getId() == userID).findFirst().get();
     }
 
+    public TelegramUser getUser(String username) {
+        for (TelegramUser telegramUser : users) {
+            if (telegramUser.getUsername().equalsIgnoreCase(username)) {
+                return telegramUser;
+            }
+        }
+        return null;
+    }
+
+    public TelegramUser getUserByName(String name) {
+        for (TelegramUser telegramUser : users) {
+            if (telegramUser.getName().equalsIgnoreCase(name)) {
+                return telegramUser;
+            }
+        }
+        return null;
+    }
+
     public List<TelegramUser> getTopUsersByMessageCount() {
         List<TelegramUser> list = new TreeList<>(users);
 
