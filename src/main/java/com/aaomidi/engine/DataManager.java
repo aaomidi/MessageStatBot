@@ -189,6 +189,7 @@ public class DataManager {
                     FileWriter fileWriter = new FileWriter(file);
                     fileWriter.write(gson.toJson(telegramUser));
                     fileWriter.flush();
+                    fileWriter.close();
                     telegramUser.setChangesMade(false);
                 }
             }

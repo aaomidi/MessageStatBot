@@ -31,6 +31,7 @@ public class CommandHandler {
 
         new DemoteCommand(instance, "demote", "Demotes a user.", true, true);
         //new GetMessagesCommand(instance, "getmessages", "");
+        new TestCommand(instance, "test", "");
         new TopUsersCommand(instance, "topusers", "Sends the top users of this chat.");
         new TopWordsCommand(instance, "topwords", "Sends the most words used in this chat.");
         new DeveloperCommand(instance, "developer", "Sends information about the developer of this bot.");
