@@ -8,6 +8,8 @@ import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.chat.message.send.SendableTextMessage;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -26,7 +28,7 @@ public class ListUsersCommand extends TelegramCommand {
         StringBuilder sb = new StringBuilder("The list of users I know so far: \n");
 
         int i = 0;
-        List<TelegramUser> users = telegramChat.getUsers();
+        List<TelegramUser> users = new ArrayList<>(telegramChat.getUsers().values());
         Collections.sort(users, (o1, o2) -> {
             if (o1.getId() == o2.getId()) return 0;
             return o1.getId() > o2.getId() ? 1 : -1;

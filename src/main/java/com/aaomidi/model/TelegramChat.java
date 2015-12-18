@@ -4,8 +4,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.collections4.list.TreeList;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -16,14 +15,14 @@ public class TelegramChat {
     @Getter
     private final String chatID;
     @Getter
-    private List<TelegramUser> users = new TreeList<>();
+    private Map<String, TelegramUser> users = new HashMap<>();
 
     public void addUser(TelegramUser x) {
-        users.add(x);
+        users.put(x.getUsername() != null ? x.getUsername() : String.valueOf(x.getId()), x);
     }
 
     public List<TelegramUser> getAdmins() {
-        return users.stream().filter(user -> user.isAdmin()).collect(Collectors.toCollection(() -> new TreeList<>()));
+        return users.values().stream().filter(TelegramUser::isAdmin).collect(Collectors.toCollection(ArrayList::new));
     }
 
     public boolean isAdmin(int userID) {
@@ -37,26 +36,24 @@ public class TelegramChat {
 
     public List<TelegramMessage> getAllMessages() {
         List<TelegramMessage> messages = new TreeList<>();
-        users.stream().forEach(t -> messages.addAll(t.getMessages()));
+        users.values().stream().forEach(t -> messages.addAll(t.getMessages()));
 
         return messages;
     }
 
     public TelegramUser getUser(int userID) {
-        return users.stream().filter(u -> u.getId() == userID).findFirst().get();
+        return users.values().stream().filter(u -> u.getId() == userID).findFirst().get();
     }
 
     public TelegramUser getUser(String username) {
-        for (TelegramUser telegramUser : users) {
-            if (telegramUser.getUsername().equalsIgnoreCase(username)) {
-                return telegramUser;
-            }
-        }
-        return null;
+        username = username.toLowerCase();
+        if(username.charAt(0) == '@') username = username.substring(1);
+
+        return users.get(username);
     }
 
     public TelegramUser getUserByName(String name) {
-        for (TelegramUser telegramUser : users) {
+        for (TelegramUser telegramUser : users.values()) {
             if (telegramUser.getName().equalsIgnoreCase(name)) {
                 return telegramUser;
             }
@@ -65,7 +62,8 @@ public class TelegramChat {
     }
 
     public List<TelegramUser> getTopUsersByMessageCount() {
-        List<TelegramUser> list = new TreeList<>(users);
+
+        List<TelegramUser> list = new TreeList<>(users.values());
 
         Collections.sort(list, (o1, o2) -> {
             if (o1.getMessages().size() == o2.getMessages().size()) return 0;
@@ -77,7 +75,7 @@ public class TelegramChat {
     }
 
     public List<TelegramUser> getTopUsersByRatio() {
-        List<TelegramUser> list = new TreeList<>(users);
+        List<TelegramUser> list = new TreeList<>(users.values());
 
         Collections.sort(list, (o1, o2) -> {
             if (o1.getWordCount() / (double) o1.getMessages().size() == o2.getWordCount() / (double) o2.getMessages().size())
@@ -90,7 +88,7 @@ public class TelegramChat {
     }
 
     public List<TelegramUser> getTopUsersByWordsCount() {
-        List<TelegramUser> list = new TreeList<>(users);
+        List<TelegramUser> list = new TreeList<>(users.values());
 
         Collections.sort(list, (o1, o2) -> {
             if (o1.getWordCount() == o2.getWordCount()) return 0;

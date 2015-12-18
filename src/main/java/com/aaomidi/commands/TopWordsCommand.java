@@ -10,10 +10,7 @@ import org.apache.commons.collections4.list.TreeList;
 import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Created by amir on 2015-11-27.
@@ -28,7 +25,7 @@ public class TopWordsCommand extends TelegramCommand {
     @Override
     public void execute(CommandMessageReceivedEvent event) {
         Chat chat = event.getChat();
-        List<TelegramUser> users = getInstance().getDataManager().getUsers(chat.getId());
+        Collection<TelegramUser> users = getInstance().getDataManager().getUsers(chat.getId());
         Integer minAmount = -1;
         if (event.getArgs().length >= 1) {
             minAmount = IntegerConverter.fromString(event.getArgs()[0]);

@@ -7,6 +7,7 @@ import com.aaomidi.model.TelegramUser;
 import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -22,7 +23,7 @@ public class InfoCommand extends TelegramCommand {
         Chat chat = event.getChat();
         TelegramChat telegramChat = getInstance().getDataManager().getChat(chat.getId());
 
-        List<TelegramUser> telegramUsers = telegramChat.getUsers();
+        Collection<TelegramUser> telegramUsers = telegramChat.getUsers().values();
 
         StringBuilder s = new StringBuilder("Here is what I know so far!");
         s.append(String.format("\nThis chat has an ID of %s and I know %d users so far!", chat.getId(), telegramUsers.size()));
