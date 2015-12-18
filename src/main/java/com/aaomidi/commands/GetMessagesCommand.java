@@ -14,8 +14,9 @@ import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceived
  */
 public class GetMessagesCommand extends TelegramCommand {
 
-    public GetMessagesCommand(MessageStatBot instance, String name, String description, String... aliases) {
-        super(instance, name, description, aliases);
+
+    public GetMessagesCommand(MessageStatBot instance, String name, String description, boolean localAdminCommand, String... aliases) {
+        super(instance, name, description, localAdminCommand, aliases);
     }
 
     @Override

@@ -18,7 +18,7 @@ public class TelegramChat {
     private Map<String, TelegramUser> users = new HashMap<>();
 
     public void addUser(TelegramUser x) {
-        users.put(x.getUsername() != null ? x.getUsername() : String.valueOf(x.getId()), x);
+        users.put(x.getUsername() != null ? x.getUsername().toLowerCase() : String.valueOf(x.getId()), x);
     }
 
     public List<TelegramUser> getAdmins() {
