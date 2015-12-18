@@ -17,6 +17,7 @@ import pro.zackpollard.telegrambot.api.chat.message.send.SendableTextMessage;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 import pro.zackpollard.telegrambot.api.user.User;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -46,7 +47,7 @@ public class RandomMessageCommand extends TelegramCommand {
         }
 
         LogHandler.logn(name);
-        List<TelegramUser> telegramUsers = getInstance().getDataManager().getUsers(chat.getId());
+        Collection<TelegramUser> telegramUsers = getInstance().getDataManager().getUsers(chat.getId());
 
         TelegramUser telegramUser = null;
 

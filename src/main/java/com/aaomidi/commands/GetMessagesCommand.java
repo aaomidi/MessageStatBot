@@ -6,6 +6,7 @@ import com.aaomidi.model.TelegramMessage;
 import com.aaomidi.model.TelegramUser;
 import com.aaomidi.util.IntegerConverter;
 import pro.zackpollard.telegrambot.api.chat.Chat;
+import pro.zackpollard.telegrambot.api.chat.message.send.SendableTextMessage;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 
 /**
@@ -19,12 +20,24 @@ public class GetMessagesCommand extends TelegramCommand {
 
     @Override
     public void execute(CommandMessageReceivedEvent event) {
-        Integer userID = IntegerConverter.fromString(event.getArgsString());
+        Integer userID = IntegerConverter.fromString(event.getArgs()[0]);
         Chat chat = event.getChat();
-        if (userID == null) return;
 
-        TelegramUser telegramUser = getInstance().getDataManager().getUser(chat.getId(), userID);
-        if (telegramUser == null) return;
+        TelegramUser telegramUser = null;
+
+        if (userID == null) {
+
+            telegramUser = getInstance().getDataManager().getChat(chat.getId()).getUser(event.getArgs()[0]);
+        } else {
+
+            telegramUser = getInstance().getDataManager().getUser(chat.getId(), userID);
+        }
+
+        if (telegramUser == null) {
+
+            event.getChat().sendMessage(SendableTextMessage.builder().message("User was not found, please provide the ID or Username of the user.").replyTo(event.getMessage()).build(), getTelegramBot());
+            return;
+        }
 
         StringBuilder sb = new StringBuilder();
 

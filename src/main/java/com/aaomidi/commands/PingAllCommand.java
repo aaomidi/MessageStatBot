@@ -6,6 +6,7 @@ import com.aaomidi.model.TelegramUser;
 import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ public class PingAllCommand extends TelegramCommand {
     @Override
     public void execute(CommandMessageReceivedEvent event) {
         Chat chat = event.getChat();
-        List<TelegramUser> users = getInstance().getDataManager().getUsers(chat.getId());
+        Collection<TelegramUser> users = getInstance().getDataManager().getUsers(chat.getId());
 
 
         StringBuilder sb = new StringBuilder();

@@ -1,11 +1,14 @@
 package com.aaomidi.model;
 
+import com.aaomidi.MessageStatBot;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.collections4.list.TreeList;
+import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.user.User;
 
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -42,9 +45,23 @@ public class TelegramUser {
     }
 
     public void updateInformation(User user) {
-        this.name = user.getFullName();
-        this.username = user.getUsername();
-        changesMade = true;
+
+        updateInformation(user, null);
+    }
+
+    public void updateInformation(User user, Chat chat) {
+        if(!this.name.equals(user.getFullName())) this.name = user.getFullName();
+        if(!this.username.equals(user.getUsername())) {
+            if(chat != null) {
+
+                Map<String, TelegramUser> users = MessageStatBot.getInstance().getDataManager().getChat(chat.getId()).getUsers();
+                users.remove(this.username);
+                users.put(user.getUsername(), this);
+            }
+
+            this.username = user.getUsername();
+        }
+        setChangesMade(true);
     }
 
     public int getWordCount() {

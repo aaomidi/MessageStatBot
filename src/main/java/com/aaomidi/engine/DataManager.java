@@ -8,6 +8,7 @@ import org.apache.commons.collections4.list.TreeList;
 import pro.zackpollard.telegrambot.api.user.User;
 
 import java.io.*;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -78,7 +79,7 @@ public class DataManager {
 
     public boolean doesUserExist(String chatID, Integer userID) {
         TelegramChat chat = getChat(chatID);
-        List<TelegramUser> users = chat.getUsers();
+        Collection<TelegramUser> users = chat.getUsers().values();
 
 
         if (users == null) return false;
@@ -99,7 +100,7 @@ public class DataManager {
 
         if (telegramChat == null) return null;
 
-        List<TelegramUser> users = telegramChat.getUsers();
+        Collection<TelegramUser> users = telegramChat.getUsers().values();
 
         for (TelegramUser t : users) {
             if (t.getId() == userID) return t;
@@ -108,12 +109,12 @@ public class DataManager {
         return null;
     }
 
-    public List<TelegramUser> getUsers(String chatID) {
+    public Collection<TelegramUser> getUsers(String chatID) {
         TelegramChat chat = getChat(chatID);
 
         if (chat == null) return null;
 
-        return chat.getUsers();
+        return chat.getUsers().values();
     }
 
     public void initializeChat(String chatID) {
@@ -171,7 +172,7 @@ public class DataManager {
             for (Map.Entry<String, TelegramChat> entry : chatUserMap.entrySet()) {
                 String chatID = entry.getKey();
                 TelegramChat telegramChat = entry.getValue();
-                List<TelegramUser> users = telegramChat.getUsers();
+                Collection<TelegramUser> users = telegramChat.getUsers().values();
 
                 String currentPath = String.format("%s%sData%s%s", System.getProperty("user.dir"), File.separator, File.separator, chatID);
                 for (TelegramUser telegramUser : users) {

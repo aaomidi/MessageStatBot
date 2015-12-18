@@ -20,9 +20,15 @@ public class MessageStatBot {
     @Getter
     private DataManager dataManager;
 
+    @Getter
+    private static MessageStatBot instance;
+
     private TimerTask timerTask;
 
     public MessageStatBot(String... args) {
+
+        instance = this;
+
         this.setupTelegram(args[0]);
 
         this.setupCommands();

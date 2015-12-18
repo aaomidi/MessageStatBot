@@ -50,7 +50,7 @@ public class StatCounter extends TelegramCommand {
         TelegramMessage telegramMessage = new TelegramMessage(message.getTimeStamp(), message.getMessageId(), content, type);
 
 
-        telegramUser.updateInformation(user);
+        telegramUser.updateInformation(user, chat);
         telegramUser.say(telegramMessage);
     }
 }
