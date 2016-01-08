@@ -49,7 +49,6 @@ public class DataManager {
 
     private void loadData() {
         Gson gson = new Gson();
-        waaa
         String currentPath = System.getProperty("user.dir");
         currentPath = String.format("%s%sData", currentPath, File.separator);
 
