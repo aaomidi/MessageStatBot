@@ -27,6 +27,7 @@ public class TelegramUser {
     @Getter
     @Setter
     private transient boolean changesMade = false;
+
     public TelegramUser(User user) {
         this.id = user.getId();
         updateInformation(user);
@@ -50,9 +51,12 @@ public class TelegramUser {
     }
 
     public void updateInformation(User user, Chat chat) {
-        if(!this.name.equals(user.getFullName())) this.name = user.getFullName();
-        if(!this.username.equals(user.getUsername())) {
-            if(chat != null) {
+        if (this.name == null) this.name = user.getFullName();
+        if (this.username == null) this.username = user.getUsername();
+
+        if (!this.name.equals(user.getFullName())) this.name = user.getFullName();
+        if (!this.username.equals(user.getUsername())) {
+            if (chat != null) {
 
                 Map<String, TelegramUser> users = MessageStatBot.getInstance().getDataManager().getChat(chat.getId()).getUsers();
                 users.remove(this.username);

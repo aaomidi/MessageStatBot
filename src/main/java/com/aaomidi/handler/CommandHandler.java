@@ -29,6 +29,7 @@ public class CommandHandler {
     public void registerCommands() {
         statCounter = new StatCounter(instance, "statcounter", "Does nothing");
 
+        new ChatCountCommand(instance, "chatcount", "Returns chat count.", true, false);
         new DemoteCommand(instance, "demote", "Demotes a user.", true, true);
         new GetMessagesCommand(instance, "getmessages", "", true, "");
         new TopUsersCommand(instance, "topusers", "Sends the top users of this chat.");
@@ -63,7 +64,7 @@ public class CommandHandler {
         TelegramCommand command = commands.get(cmdString);
 
         if (command == null) return;
-        if (command.isGlobalAdminCommand() && !instance.getDataManager().isAdmin(user) && command.isLocalAdminCommand() && !telegramChat.isAdmin(user.getId())) {
+        if ((command.isGlobalAdminCommand() && !instance.getDataManager().isAdmin(user)) || (command.isLocalAdminCommand() && !telegramChat.isAdmin(user.getId()) && !instance.getDataManager().isAdmin(user))) {
             SendableTextMessage noPermsMessage = SendableTextMessage.builder()
                     .message("You do not have permissions to execute that command " + user.getFullName())
                     .replyTo(event.getMessage())

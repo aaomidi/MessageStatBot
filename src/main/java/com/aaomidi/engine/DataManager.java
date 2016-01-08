@@ -8,10 +8,7 @@ import org.apache.commons.collections4.list.TreeList;
 import pro.zackpollard.telegrambot.api.user.User;
 
 import java.io.*;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Created by amir on 2015-11-27.
@@ -31,6 +28,20 @@ public class DataManager {
         this.loadAdmins();
     }
 
+    public int getChatCount() {
+        return chatUserMap.size();
+    }
+
+    public int getUserCount() {
+        HashSet<Integer> countedIDs = new HashSet<>();
+        for (TelegramChat telegramChat : chatUserMap.values()) {
+            for (TelegramUser telegramUser : telegramChat.getUsers().values()) {
+                countedIDs.add(telegramUser.getId());
+            }
+        }
+        return countedIDs.size();
+    }
+
     private void loadAdmins() {
         globalAdmins.add(55395012);
     }
@@ -38,7 +49,7 @@ public class DataManager {
 
     private void loadData() {
         Gson gson = new Gson();
-
+        waaa
         String currentPath = System.getProperty("user.dir");
         currentPath = String.format("%s%sData", currentPath, File.separator);
 
@@ -205,6 +216,7 @@ public class DataManager {
     }
 
     public boolean isAdmin(int id) {
+        LogHandler.logn("ID IS: " + id);
         for (Integer i : globalAdmins) {
             if (i.equals(id)) {
                 return true;
