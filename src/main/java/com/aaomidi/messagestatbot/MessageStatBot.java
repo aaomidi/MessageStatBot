@@ -6,8 +6,10 @@ import com.aaomidi.messagestatbot.handler.CommandHandler;
 import com.aaomidi.messagestatbot.hooks.TelegramHook;
 import com.aaomidi.messagestatbot.util.LogHandler;
 import lombok.Getter;
+import org.apache.commons.io.FileUtils;
 import pro.zackpollard.telegrambot.api.TelegramBot;
 
+import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -18,7 +20,7 @@ public class MessageStatBot {
     @Getter
     private static MessageStatBot instance;
     @Getter
-    private static Integer build;
+    private static int build;
     @Getter
     private TelegramHook telegramHook;
     @Getter
@@ -32,13 +34,13 @@ public class MessageStatBot {
 
         instance = this;
 
-        this.startAutoUpdater();
+        this.setupDataManager();
 
         this.setupTelegram(args[0]);
 
-        this.setupCommands();
+        this.startAutoUpdater();
 
-        this.setupDataManager();
+        this.setupCommands();
 
         this.addSaveTimer();
 
@@ -52,6 +54,16 @@ public class MessageStatBot {
 
     private void startAutoUpdater() {
         LogHandler.logn("Starting auto updater...");
+        try {
+            File file = new File("build");
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            build = Integer.parseInt(FileUtils.readFileToString(file));
+        } catch (Exception e) {
+            build = 0;
+            //e.printStackTrace();
+        }
         updaterThread = new Thread(new UpdateHandler(this, "MessageStatBot"));
         updaterThread.start();
         LogHandler.logn("\tStarted");

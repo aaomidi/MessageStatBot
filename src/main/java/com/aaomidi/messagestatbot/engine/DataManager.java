@@ -22,7 +22,7 @@ public class DataManager {
 
     public DataManager() {
         String currentPath = System.getProperty("user.dir");
-        currentPath = String.format("%s/Data", currentPath);
+        currentPath = String.format("%s%sData", currentPath, File.separator);
 
         createFile(currentPath, true);
 
@@ -58,7 +58,7 @@ public class DataManager {
         String currentPath = System.getProperty("user.dir");
         currentPath = String.format("%s%sData", currentPath, File.separator);
 
-        LogHandler.logn("File path: ", currentPath);
+        LogHandler.logn("File path: " + currentPath);
 
         File file = new File(currentPath);
         if (!file.isDirectory() || file.listFiles() == null) return;
@@ -142,7 +142,7 @@ public class DataManager {
 
         LogHandler.logn(currentPath);
 
-        currentPath = String.format("%s/Data/%s", currentPath, chatID);
+        currentPath = String.format("%s%sData%s%s", currentPath, File.separator, File.separator, chatID);
 
         LogHandler.logn(currentPath);
 
@@ -159,8 +159,7 @@ public class DataManager {
 
         LogHandler.logn(currentPath);
 
-        currentPath = String.format("%s/Data/%s/%s.json", currentPath, chatID, userID);
-
+        currentPath = String.format("%s%sData%s%s%s%s.json", currentPath, File.separator, File.separator, chatID, File.separator, userID);
         LogHandler.logn(currentPath);
 
         createFile(currentPath, false);
