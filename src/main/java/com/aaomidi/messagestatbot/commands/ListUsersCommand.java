@@ -1,9 +1,9 @@
-package com.aaomidi.commands;
+package com.aaomidi.messagestatbot.commands;
 
-import com.aaomidi.MessageStatBot;
-import com.aaomidi.model.TelegramChat;
-import com.aaomidi.model.TelegramCommand;
-import com.aaomidi.model.TelegramUser;
+import com.aaomidi.messagestatbot.MessageStatBot;
+import com.aaomidi.messagestatbot.model.TelegramChat;
+import com.aaomidi.messagestatbot.model.TelegramCommand;
+import com.aaomidi.messagestatbot.model.TelegramUser;
 import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.chat.message.send.SendableTextMessage;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;

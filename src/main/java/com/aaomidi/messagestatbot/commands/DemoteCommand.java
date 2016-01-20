@@ -1,10 +1,10 @@
-package com.aaomidi.commands;
+package com.aaomidi.messagestatbot.commands;
 
-import com.aaomidi.MessageStatBot;
-import com.aaomidi.model.TelegramChat;
-import com.aaomidi.model.TelegramCommand;
-import com.aaomidi.model.TelegramUser;
-import com.aaomidi.util.IntegerConverter;
+import com.aaomidi.messagestatbot.MessageStatBot;
+import com.aaomidi.messagestatbot.model.TelegramChat;
+import com.aaomidi.messagestatbot.model.TelegramCommand;
+import com.aaomidi.messagestatbot.model.TelegramUser;
+import com.aaomidi.messagestatbot.util.IntegerConverter;
 import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.chat.message.Message;
 import pro.zackpollard.telegrambot.api.chat.message.send.SendableTextMessage;
@@ -13,10 +13,8 @@ import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceived
 /**
  * Created by amir on 2015-12-05.
  */
-public class PromoteCommand extends TelegramCommand {
-
-
-    public PromoteCommand(MessageStatBot instance, String name, String description, boolean globalAdminCommand, boolean localAdminCommand, String... aliases) {
+public class DemoteCommand extends TelegramCommand {
+    public DemoteCommand(MessageStatBot instance, String name, String description, boolean globalAdminCommand, boolean localAdminCommand, String... aliases) {
         super(instance, name, description, globalAdminCommand, localAdminCommand, aliases);
     }
 
@@ -51,7 +49,7 @@ public class PromoteCommand extends TelegramCommand {
             return;
         }
 
-        user.setIsAdmin(true);
+        user.setIsAdmin(false);
         chat.sendMessage(successMessage, getTelegramBot());
     }
 }

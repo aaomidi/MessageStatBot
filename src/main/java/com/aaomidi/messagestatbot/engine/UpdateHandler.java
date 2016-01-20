@@ -1,7 +1,7 @@
-package com.aaomidi.engine;
+package com.aaomidi.messagestatbot.engine;
 
-import com.aaomidi.MessageStatBot;
-import com.aaomidi.util.LogHandler;
+import com.aaomidi.messagestatbot.MessageStatBot;
+import com.aaomidi.messagestatbot.util.LogHandler;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;

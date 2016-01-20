@@ -1,10 +1,10 @@
-package com.aaomidi;
+package com.aaomidi.messagestatbot;
 
-import com.aaomidi.engine.DataManager;
-import com.aaomidi.engine.UpdateHandler;
-import com.aaomidi.handler.CommandHandler;
-import com.aaomidi.hooks.TelegramHook;
-import com.aaomidi.util.LogHandler;
+import com.aaomidi.messagestatbot.engine.DataManager;
+import com.aaomidi.messagestatbot.engine.UpdateHandler;
+import com.aaomidi.messagestatbot.handler.CommandHandler;
+import com.aaomidi.messagestatbot.hooks.TelegramHook;
+import com.aaomidi.messagestatbot.util.LogHandler;
 import lombok.Getter;
 import pro.zackpollard.telegrambot.api.TelegramBot;
 

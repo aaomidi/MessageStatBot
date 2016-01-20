@@ -1,6 +1,6 @@
-package com.aaomidi.model;
+package com.aaomidi.messagestatbot.model;
 
-import com.aaomidi.MessageStatBot;
+import com.aaomidi.messagestatbot.MessageStatBot;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.collections4.list.TreeList;

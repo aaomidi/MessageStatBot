@@ -1,10 +1,10 @@
-package com.aaomidi.commands;
+package com.aaomidi.messagestatbot.commands;
 
-import com.aaomidi.MessageStatBot;
-import com.aaomidi.model.TelegramCommand;
-import com.aaomidi.model.TelegramMessage;
-import com.aaomidi.model.TelegramUser;
-import com.aaomidi.util.IntegerConverter;
+import com.aaomidi.messagestatbot.MessageStatBot;
+import com.aaomidi.messagestatbot.model.TelegramCommand;
+import com.aaomidi.messagestatbot.model.TelegramMessage;
+import com.aaomidi.messagestatbot.model.TelegramUser;
+import com.aaomidi.messagestatbot.util.IntegerConverter;
 import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.chat.message.send.SendableTextMessage;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;

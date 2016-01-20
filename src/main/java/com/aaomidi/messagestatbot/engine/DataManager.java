@@ -1,8 +1,8 @@
-package com.aaomidi.engine;
+package com.aaomidi.messagestatbot.engine;
 
-import com.aaomidi.model.TelegramChat;
-import com.aaomidi.model.TelegramUser;
-import com.aaomidi.util.LogHandler;
+import com.aaomidi.messagestatbot.model.TelegramChat;
+import com.aaomidi.messagestatbot.model.TelegramUser;
+import com.aaomidi.messagestatbot.util.LogHandler;
 import com.google.gson.Gson;
 import lombok.Getter;
 import org.apache.commons.collections4.list.TreeList;

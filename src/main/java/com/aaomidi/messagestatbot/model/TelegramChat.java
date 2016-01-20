@@ -1,4 +1,4 @@
-package com.aaomidi.model;
+package com.aaomidi.messagestatbot.model;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

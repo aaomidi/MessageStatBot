@@ -1,7 +1,7 @@
-package com.aaomidi.model;
+package com.aaomidi.messagestatbot.model;
 
-import com.aaomidi.MessageStatBot;
-import com.aaomidi.util.LogHandler;
+import com.aaomidi.messagestatbot.MessageStatBot;
+import com.aaomidi.messagestatbot.util.LogHandler;
 import lombok.Getter;
 import pro.zackpollard.telegrambot.api.TelegramBot;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
