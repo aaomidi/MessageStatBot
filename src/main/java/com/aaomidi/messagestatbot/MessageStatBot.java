@@ -32,6 +32,8 @@ public class MessageStatBot {
 
         instance = this;
 
+        this.startAutoUpdater();
+
         this.setupTelegram(args[0]);
 
         this.setupCommands();

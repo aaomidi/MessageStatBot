@@ -58,6 +58,8 @@ public class DataManager {
         String currentPath = System.getProperty("user.dir");
         currentPath = String.format("%s%sData", currentPath, File.separator);
 
+        LogHandler.logn("File path: ", currentPath);
+
         File file = new File(currentPath);
         if (!file.isDirectory() || file.listFiles() == null) return;
 
