@@ -40,12 +40,20 @@ public class TelegramHook implements Listener {
 
     @Override
     public void onTextMessageReceived(TextMessageReceivedEvent event) {
-        // if (event.getChat().getId().equals("-17349250")) return;
-
         LogHandler.logn("Message received %s - %s (%d): %s", event.getChat().getId(), event.getMessage().getSender().getFullName(), event.getMessage().getSender().getId(), event.getContent().getContent());
+
+        /*if (event.getChat().getId().equals("55395012") && event.getMessage().getSender().getId() == 55395012) {
+            String message = event.getContent().getContent();
+
+            for (TelegramChat telegramChat : instance.getDataManager().getChats()) {
+                Chat chat = telegramChat.toChat();
+                if (chat == null)
+                    continue;
+                chat.sendMessage(message, bot);
+            }
+        } */
 
         instance.getCommandHandler().handleText(event);
     }
-
-
 }
+

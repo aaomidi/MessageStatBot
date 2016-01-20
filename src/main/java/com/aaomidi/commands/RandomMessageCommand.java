@@ -18,7 +18,6 @@ import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceived
 import pro.zackpollard.telegrambot.api.user.User;
 
 import java.util.Collection;
-import java.util.List;
 
 /**
  * Created by amir on 2015-11-29.

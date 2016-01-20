@@ -3,8 +3,6 @@ package com.aaomidi.model;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-import java.util.List;
-
 /**
  * Created by amir on 2015-11-27.
  */

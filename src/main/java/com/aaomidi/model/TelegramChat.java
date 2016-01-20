@@ -3,6 +3,8 @@ package com.aaomidi.model;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.collections4.list.TreeList;
+import pro.zackpollard.telegrambot.api.TelegramBot;
+import pro.zackpollard.telegrambot.api.chat.Chat;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -47,7 +49,7 @@ public class TelegramChat {
 
     public TelegramUser getUser(String username) {
         username = username.toLowerCase();
-        if(username.charAt(0) == '@') username = username.substring(1);
+        if (username.charAt(0) == '@') username = username.substring(1);
 
         return users.get(username);
     }
@@ -97,5 +99,9 @@ public class TelegramChat {
         });
 
         return list;
+    }
+
+    public Chat toChat() {
+        return TelegramBot.getChat(chatID);
     }
 }

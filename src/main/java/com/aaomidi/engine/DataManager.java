@@ -4,6 +4,7 @@ import com.aaomidi.model.TelegramChat;
 import com.aaomidi.model.TelegramUser;
 import com.aaomidi.util.LogHandler;
 import com.google.gson.Gson;
+import lombok.Getter;
 import org.apache.commons.collections4.list.TreeList;
 import pro.zackpollard.telegrambot.api.user.User;
 
@@ -16,6 +17,7 @@ import java.util.*;
 public class DataManager {
     // <ChatID, UserID>
     private Map<String, TelegramChat> chatUserMap = new TreeMap<>();
+    @Getter
     private List<Integer> globalAdmins = new TreeList<>();
 
     public DataManager() {
@@ -42,6 +44,10 @@ public class DataManager {
         return countedIDs.size();
     }
 
+    public Collection<TelegramChat> getChats() {
+        return this.chatUserMap.values();
+    }
+
     private void loadAdmins() {
         globalAdmins.add(55395012);
     }
@@ -63,7 +69,7 @@ public class DataManager {
 
             for (File userFile : f.listFiles()) {
                 if (userFile.isDirectory()) continue; // Wrong data.
-                LogHandler.logn("\tChatID: %s UserFile: %s", f.getName(), userFile.getName());
+                //LogHandler.logn("\tChatID: %s UserFile: %s", f.getName(), userFile.getName());
 
                 if (!userFile.getName().contains("json")) continue; // Bad data.
 

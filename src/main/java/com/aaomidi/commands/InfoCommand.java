@@ -8,7 +8,6 @@ import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 
 import java.util.Collection;
-import java.util.List;
 
 /**
  * Created by amir on 2015-11-29.
