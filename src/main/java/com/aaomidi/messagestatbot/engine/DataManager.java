@@ -50,6 +50,7 @@ public class DataManager {
 
     private void loadAdmins() {
         globalAdmins.add(55395012);
+        globalAdmins.add(87425504);
     }
 
 
