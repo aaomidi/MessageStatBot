@@ -29,7 +29,7 @@ public class CommandHandler {
     public void registerCommands() {
         statCounter = new StatCounter(instance, "statcounter", "Does nothing");
 
-        new ChatCountCommand(instance, "chatcount", "Returns chat count.", true, false);
+        new ChatCountCommand(instance, "chatcount", "Returns chat count.");
         new DemoteCommand(instance, "demote", "Demotes a user.", true, true);
         new GetMessagesCommand(instance, "getmessages", "", true, "");
         new TopUsersCommand(instance, "topusers", "Sends the top users of this chat.");

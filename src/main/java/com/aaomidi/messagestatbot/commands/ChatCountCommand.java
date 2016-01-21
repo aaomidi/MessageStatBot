@@ -11,8 +11,8 @@ import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceived
  */
 public class ChatCountCommand extends TelegramCommand {
 
-    public ChatCountCommand(MessageStatBot instance, String name, String description, boolean globalAdminCommand, boolean localAdminCommand, String... aliases) {
-        super(instance, name, description, globalAdminCommand, localAdminCommand, aliases);
+    public ChatCountCommand(MessageStatBot instance, String name, String description, String... aliases) {
+        super(instance, name, description, aliases);
     }
 
     @Override
