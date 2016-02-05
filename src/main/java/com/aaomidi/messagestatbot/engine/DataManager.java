@@ -44,6 +44,14 @@ public class DataManager {
         return countedIDs.size();
     }
 
+    public int getMessageCount() {
+        int msg = 0;
+        for (TelegramChat telegramChat : chatUserMap.values()) {
+            msg += telegramChat.getAllMessages().size();
+        }
+        return msg;
+    }
+
     public Collection<TelegramChat> getChats() {
         return this.chatUserMap.values();
     }

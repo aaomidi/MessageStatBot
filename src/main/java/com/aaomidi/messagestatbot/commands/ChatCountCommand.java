@@ -20,7 +20,7 @@ public class ChatCountCommand extends TelegramCommand {
         Message message = event.getMessage();
 
         SendableTextMessage textMessage = SendableTextMessage.builder()
-                .message(String.format("I am in %d chats! I keep a track of %d users!", getInstance().getDataManager().getChatCount(), getInstance().getDataManager().getUserCount()))
+                .message(String.format("I am in %d chats! I keep a track of %d users and I have %d messages statistisized whew...", getInstance().getDataManager().getChatCount(), getInstance().getDataManager().getUserCount(), getInstance().getDataManager().getMessageCount()))
                 .replyTo(message)
                 .build();
 
