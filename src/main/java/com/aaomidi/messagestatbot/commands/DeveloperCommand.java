@@ -14,6 +14,6 @@ public class DeveloperCommand extends TelegramCommand {
 
     @Override
     public void execute(CommandMessageReceivedEvent event) {
-        event.getChat().sendMessage("Developed by @aaomidi", getTelegramBot());
+        event.getChat().sendMessage("Developed by @aaomidi using @zackpollard's API :)", getTelegramBot());
     }
 }
