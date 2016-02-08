@@ -40,6 +40,7 @@ public class CommandHandler {
         new ListUsersCommand(instance, "listall", "Sends the list of all known users.", "listusers");
         new PingAllCommand(instance, "pingall", "Pings all users.", true);
         new PromoteCommand(instance, "promote", "Promotes a user.", true, true);
+        new WordCloudCommand(instance, "wordcloud", "Creates a wordcloud.");
     }
 
     public void registerCommand(TelegramCommand telegramCommand) {
