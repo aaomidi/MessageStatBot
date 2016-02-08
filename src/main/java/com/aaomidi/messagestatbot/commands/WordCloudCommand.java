@@ -20,15 +20,19 @@ import wordcloud.palette.ColorPalette;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Created by amir on 2016-02-08.
  */
 public class WordCloudCommand extends TelegramCommand {
+    FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer();
+
     public WordCloudCommand(MessageStatBot instance, String name, String description, String... aliases) {
         super(instance, name, description, aliases);
+        frequencyAnalyzer.setWordFrequencesToReturn(300);
+        frequencyAnalyzer.setMinWordLength(3);
     }
 
     @Override
@@ -36,10 +40,16 @@ public class WordCloudCommand extends TelegramCommand {
         Chat chat = event.getChat();
         TelegramChat telegramChat = getInstance().getDataManager().getChat(chat.getId());
 
-        FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer();
-        frequencyAnalyzer.setWordFrequencesToReturn(300);
-        frequencyAnalyzer.setMinWordLength(3);
-        List<WordFrequency> wordFrequencyList = frequencyAnalyzer.load(telegramChat.getAllMessages().stream().map(TelegramMessage::getMessage).collect(Collectors.toList()));
+        List<String> words = new ArrayList<>(telegramChat.getAllMessages().size());
+        for (TelegramMessage tm : telegramChat.getAllMessages()) {
+            for (String word : tm.words()) {
+                if (word == null)
+                    continue;
+                words.add(word);
+            }
+        }
+
+        List<WordFrequency> wordFrequencyList = frequencyAnalyzer.load(words);
         WordCloud wordCloud = new WordCloud(600, 600, CollisionMode.PIXEL_PERFECT);
         wordCloud.setPadding(2);
         wordCloud.setBackground(new CircleBackground(300));
