@@ -27,12 +27,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.yaml</groupId>
-            <artifactId>snakeyaml</artifactId>
-            <version>1.16</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>LATEST</version>
@@ -50,7 +44,7 @@
         <dependency>
             <groupId>pro.zackpollard.telegrambot.api</groupId>
             <artifactId>jtelegram-botapi</artifactId>
-            <version>[0.6,)</version>
+            <version>0.7.7</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>

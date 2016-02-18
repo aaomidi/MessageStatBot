@@ -16,7 +16,7 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class TelegramUser {
     @Getter
-    private final int id;
+    private final long id;
     @Getter
     private String name;
     private String username;

@@ -36,7 +36,7 @@ public class DataManager {
     }
 
     public int getUserCount() {
-        HashSet<Integer> countedIDs = new HashSet<>();
+        HashSet<Long> countedIDs = new HashSet<>();
         for (TelegramChat telegramChat : chatUserMap.values()) {
             for (TelegramUser telegramUser : telegramChat.getUsers().values()) {
                 countedIDs.add(telegramUser.getId());
@@ -115,7 +115,7 @@ public class DataManager {
         return chatUserMap.containsKey(chatID);
     }
 
-    public boolean doesUserExist(String chatID, Integer userID) {
+    public boolean doesUserExist(String chatID, Long userID) {
         TelegramChat chat = getChat(chatID);
         Collection<TelegramUser> users = chat.getUsers().values();
 
@@ -133,7 +133,7 @@ public class DataManager {
         return chatUserMap.get(chatID);
     }
 
-    public TelegramUser getUser(String chatID, Integer userID) {
+    public TelegramUser getUser(String chatID, Long userID) {
         TelegramChat telegramChat = getChat(chatID);
 
         if (telegramChat == null) return null;
@@ -171,7 +171,7 @@ public class DataManager {
         chatUserMap.put(chatID, new TelegramChat(chatID));
     }
 
-    public void initializeUser(String chatID, int userID, User user) {
+    public void initializeUser(String chatID, long userID, User user) {
         if (doesUserExist(chatID, userID)) return;
 
 

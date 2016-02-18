@@ -5,7 +5,7 @@ import com.aaomidi.messagestatbot.model.TelegramCommand;
 import com.aaomidi.messagestatbot.model.TelegramMessage;
 import com.aaomidi.messagestatbot.model.TelegramUser;
 import com.aaomidi.messagestatbot.model.WordData;
-import com.aaomidi.messagestatbot.util.IntegerConverter;
+import com.aaomidi.messagestatbot.util.Number;
 import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 
@@ -30,7 +30,7 @@ public class TopWordsCommand extends TelegramCommand {
         Collection<TelegramUser> users = getInstance().getDataManager().getUsers(chat.getId());
         Integer minAmount = -1;
         if (event.getArgs().length >= 1) {
-            minAmount = IntegerConverter.fromString(event.getArgs()[0]);
+            minAmount = Number.fromString(event.getArgs()[0]);
             if (minAmount == null) {
                 minAmount = -1;
             }

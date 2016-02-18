@@ -4,7 +4,7 @@ import com.aaomidi.messagestatbot.MessageStatBot;
 import com.aaomidi.messagestatbot.model.TelegramCommand;
 import com.aaomidi.messagestatbot.model.TelegramMessage;
 import com.aaomidi.messagestatbot.model.TelegramUser;
-import com.aaomidi.messagestatbot.util.IntegerConverter;
+import com.aaomidi.messagestatbot.util.Number;
 import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.chat.message.send.SendableTextMessage;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
@@ -21,7 +21,7 @@ public class GetMessagesCommand extends TelegramCommand {
 
     @Override
     public void execute(CommandMessageReceivedEvent event) {
-        Integer userID = IntegerConverter.fromString(event.getArgs()[0]);
+        Long userID = Number.fromLongString(event.getArgs()[0]);
         Chat chat = event.getChat();
 
         TelegramUser telegramUser = null;

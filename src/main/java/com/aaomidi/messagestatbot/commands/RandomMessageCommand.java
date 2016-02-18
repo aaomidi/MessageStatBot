@@ -4,8 +4,8 @@ import com.aaomidi.messagestatbot.MessageStatBot;
 import com.aaomidi.messagestatbot.model.TelegramCommand;
 import com.aaomidi.messagestatbot.model.TelegramMessage;
 import com.aaomidi.messagestatbot.model.TelegramUser;
-import com.aaomidi.messagestatbot.util.IntegerConverter;
 import com.aaomidi.messagestatbot.util.LogHandler;
+import com.aaomidi.messagestatbot.util.Number;
 import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.chat.message.send.SendableForwardMessage;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
@@ -32,7 +32,7 @@ public class RandomMessageCommand extends TelegramCommand {
         }
         String s = event.getArgs()[event.getArgs().length - 1];
 
-        Integer minChar = IntegerConverter.fromString(s);
+        Integer minChar = Number.fromString(s);
 
         if (minChar == null && event.getArgs().length > 1) {
             name = String.format("%s %s", name, event.getArgs()[event.getArgs().length - 1]);

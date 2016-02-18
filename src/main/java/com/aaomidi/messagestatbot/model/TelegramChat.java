@@ -27,7 +27,7 @@ public class TelegramChat {
         return users.values().stream().filter(TelegramUser::isAdmin).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public boolean isAdmin(int userID) {
+    public boolean isAdmin(long userID) {
         try {
             TelegramUser tu = getAdmins().stream().filter(t -> t.getId() == userID).findFirst().get();
             return tu != null && tu.isAdmin();

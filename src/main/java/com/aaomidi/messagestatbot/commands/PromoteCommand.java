@@ -4,7 +4,7 @@ import com.aaomidi.messagestatbot.MessageStatBot;
 import com.aaomidi.messagestatbot.model.TelegramChat;
 import com.aaomidi.messagestatbot.model.TelegramCommand;
 import com.aaomidi.messagestatbot.model.TelegramUser;
-import com.aaomidi.messagestatbot.util.IntegerConverter;
+import com.aaomidi.messagestatbot.util.Number;
 import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.chat.message.Message;
 import pro.zackpollard.telegrambot.api.chat.message.send.SendableTextMessage;
@@ -28,7 +28,7 @@ public class PromoteCommand extends TelegramCommand {
         Message message = event.getMessage();
 
         String userIDString = event.getArgs()[0];
-        Integer userID = IntegerConverter.fromString(userIDString);
+        Integer userID = Number.fromString(userIDString);
         SendableTextMessage errorMessage = SendableTextMessage.builder()
                 .message("That user was not recognized")
                 .replyTo(message)
