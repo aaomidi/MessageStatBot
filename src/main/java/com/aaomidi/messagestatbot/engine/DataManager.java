@@ -1,6 +1,7 @@
 package com.aaomidi.messagestatbot.engine;
 
 import com.aaomidi.messagestatbot.model.TelegramChat;
+import com.aaomidi.messagestatbot.model.TelegramMessage;
 import com.aaomidi.messagestatbot.model.TelegramUser;
 import com.aaomidi.messagestatbot.util.LogHandler;
 import com.google.gson.Gson;
@@ -50,6 +51,16 @@ public class DataManager {
             msg += telegramChat.getAllMessages().size();
         }
         return msg;
+    }
+
+    public long getWordCount() {
+        long words = 0;
+        for (TelegramChat telegramChat : chatUserMap.values()) {
+            for (TelegramMessage msg : telegramChat.getAllMessages()) {
+                words += msg.getWordCount();
+            }
+        }
+        return words;
     }
 
     public Collection<TelegramChat> getChats() {
