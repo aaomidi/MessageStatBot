@@ -241,7 +241,7 @@ public class DataManager {
         return isAdmin(user.getId());
     }
 
-    public boolean isAdmin(int id) {
+    public boolean isAdmin(long id) {
         LogHandler.logn("ID IS: " + id);
         for (Integer i : globalAdmins) {
             if (i.equals(id)) {
