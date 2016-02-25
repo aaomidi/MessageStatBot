@@ -30,7 +30,7 @@ public class PromoteCommand extends TelegramCommand {
         String userIDString = event.getArgs()[0];
         Integer userID = Number.fromString(userIDString);
         SendableTextMessage errorMessage = SendableTextMessage.builder()
-                .message("That user was not recognized")
+                .message("That user was not recognized.")
                 .replyTo(message)
                 .build();
 
