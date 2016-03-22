@@ -26,7 +26,7 @@ public class InfoCommand extends TelegramCommand {
 
         StringBuilder s = new StringBuilder("Here is what I know so far!");
         s.append(String.format("\nThis chat has an ID of %s and I know %d users so far!", chat.getId(), telegramUsers.size()));
-        s.append(String.format("\nThere have been a total of %d message sent by all the users!", telegramChat.getAllMessages().size()));
+        s.append(String.format("\nThere have been a total of %d messages sent by all the users!", telegramChat.getAllMessages().size()));
         s.append("\nThe list of admins for this chat are: \n");
 
         for (TelegramUser u : telegramChat.getAdmins()) {
