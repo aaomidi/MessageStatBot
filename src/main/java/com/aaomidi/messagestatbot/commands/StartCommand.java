@@ -7,8 +7,8 @@ import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceived
 
 public class StartCommand extends TelegramCommand {
 
-    public PingAllCommand(MessageStatBot instance, String name, String description, boolean localAdminCommand, String... aliases) {
-        super(instance, name, description, localAdminCommand, aliases);
+    public StartCommand(MessageStatBot instance, String name, String description, String... aliases) {
+        super(instance, name, description, aliases);
     }
 
     @Override
