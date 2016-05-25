@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
  */
 @RequiredArgsConstructor
 public class TelegramChat {
+    private final TelegramBot bot;
     @Getter
     private final String chatID;
     @Getter
@@ -102,6 +103,6 @@ public class TelegramChat {
     }
 
     public Chat toChat() {
-        return TelegramBot.getChat(chatID);
+        return bot.getChat(chatID);
     }
 }

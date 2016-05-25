@@ -7,7 +7,6 @@ import com.aaomidi.messagestatbot.hooks.TelegramHook;
 import com.aaomidi.messagestatbot.util.LogHandler;
 import lombok.Getter;
 import org.apache.commons.io.FileUtils;
-import pro.zackpollard.telegrambot.api.TelegramBot;
 
 import java.io.File;
 import java.util.Timer;
@@ -84,7 +83,7 @@ public class MessageStatBot {
 
     private void setupDataManager() {
         LogHandler.logn("Setting up DataManger...");
-        dataManager = new DataManager();
+        dataManager = new DataManager(this);
         LogHandler.logn("\tDone");
     }
 
@@ -113,7 +112,7 @@ public class MessageStatBot {
 
     public void sendToAdmins(String message) {
         for (int userID : dataManager.getGlobalAdmins()) {
-            TelegramBot.getChat(userID + "").sendMessage(message, telegramHook.getBot());
+            telegramHook.getBot().getChat(userID + "").sendMessage(message);
         }
     }
 

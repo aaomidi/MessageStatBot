@@ -36,7 +36,7 @@ public class GetMessagesCommand extends TelegramCommand {
 
         if (telegramUser == null) {
 
-            event.getChat().sendMessage(SendableTextMessage.builder().message("User was not found, please provide the ID or Username of the user.").replyTo(event.getMessage()).build(), getTelegramBot());
+            event.getChat().sendMessage(SendableTextMessage.builder().message("User was not found, please provide the ID or Username of the user.").replyTo(event.getMessage()).build());
             return;
         }
 
@@ -46,6 +46,6 @@ public class GetMessagesCommand extends TelegramCommand {
             sb.append(m.getMessage()).append("\n");
         }
 
-        chat.sendMessage(sb.toString(), getTelegramBot());
+        chat.sendMessage(sb.toString());
     }
 }

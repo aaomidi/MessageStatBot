@@ -38,18 +38,18 @@ public class DemoteCommand extends TelegramCommand {
                 .build();
 
         if (userID == null) {
-            chat.sendMessage(errorMessage, getTelegramBot());
+            chat.sendMessage(errorMessage);
             return;
         }
 
         TelegramUser user = telegramChat.getUser(userID);
 
         if (user == null) {
-            chat.sendMessage(errorMessage, getTelegramBot());
+            chat.sendMessage(errorMessage);
             return;
         }
 
         user.setIsAdmin(false);
-        chat.sendMessage(successMessage, getTelegramBot());
+        chat.sendMessage(successMessage);
     }
 }

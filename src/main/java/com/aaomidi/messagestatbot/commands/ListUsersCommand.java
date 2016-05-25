@@ -50,6 +50,6 @@ public class ListUsersCommand extends TelegramCommand {
                 .replyTo(event.getMessage())
                 .build();
 
-        chat.sendMessage(textMessage, getTelegramBot());
+        chat.sendMessage(textMessage);
     }
 }

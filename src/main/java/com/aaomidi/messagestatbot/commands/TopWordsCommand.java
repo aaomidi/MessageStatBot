@@ -59,7 +59,7 @@ public class TopWordsCommand extends TelegramCommand {
             sb.append(String.format("%s - %d\n", wordData.getWord(), wordData.getCount()));
         }
 
-        chat.sendMessage(sb.toString(), getTelegramBot());
+        chat.sendMessage(sb.toString());
     }
 
     private void updateWord(String w) {

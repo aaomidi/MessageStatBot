@@ -1,5 +1,6 @@
 package com.aaomidi.messagestatbot.engine;
 
+import com.aaomidi.messagestatbot.MessageStatBot;
 import com.aaomidi.messagestatbot.model.TelegramChat;
 import com.aaomidi.messagestatbot.model.TelegramMessage;
 import com.aaomidi.messagestatbot.model.TelegramUser;
@@ -16,12 +17,14 @@ import java.util.*;
  * Created by amir on 2015-11-27.
  */
 public class DataManager {
+    private final MessageStatBot instance;
     // <ChatID, UserID>
     private Map<String, TelegramChat> chatUserMap = new TreeMap<>();
     @Getter
     private List<Integer> globalAdmins = new TreeList<>();
 
-    public DataManager() {
+    public DataManager(MessageStatBot instance) {
+        this.instance = instance;
         String currentPath = System.getProperty("user.dir");
         currentPath = String.format("%s%sData", currentPath, File.separator);
 
@@ -85,7 +88,7 @@ public class DataManager {
 
         for (File f : file.listFiles()) {
             if (!f.isDirectory() || file.listFiles() == null) continue; // Wrong data.
-            TelegramChat telegramChat = new TelegramChat(f.getName());
+            TelegramChat telegramChat = new TelegramChat(instance.getTelegramHook().getBot(), f.getName());
 
             chatUserMap.put(f.getName(), telegramChat);
 
@@ -168,7 +171,7 @@ public class DataManager {
 
         createFile(currentPath, true);
 
-        chatUserMap.put(chatID, new TelegramChat(chatID));
+        chatUserMap.put(chatID, new TelegramChat(instance.getTelegramHook().getBot(), chatID));
     }
 
     public void initializeUser(String chatID, long userID, User user) {

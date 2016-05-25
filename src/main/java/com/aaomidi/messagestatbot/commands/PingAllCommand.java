@@ -29,6 +29,6 @@ public class PingAllCommand extends TelegramCommand {
             sb.append("@").append(u.getUsername()).append(" ");
         }
 
-        chat.sendMessage(sb.toString(), getTelegramBot());
+        chat.sendMessage(sb.toString());
     }
 }

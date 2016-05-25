@@ -11,7 +11,7 @@ public class TelegramMessage {
     @Getter
     private final long timestamp;
     @Getter
-    private final int id;
+    private final long id;
     @Getter
     private final String message;
     @Getter

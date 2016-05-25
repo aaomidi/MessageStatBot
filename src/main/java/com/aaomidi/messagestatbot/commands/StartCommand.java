@@ -15,6 +15,6 @@ public class StartCommand extends TelegramCommand {
     public void execute(CommandMessageReceivedEvent event) {
         Chat chat = event.getChat();
 
-        chat.sendMessage("I will generate statistics about your group chats. Simply add me to your group to get started!", getTelegramBot());
+        chat.sendMessage("I will generate statistics about your group chats. Simply add me to your group to get started!");
     }
 }

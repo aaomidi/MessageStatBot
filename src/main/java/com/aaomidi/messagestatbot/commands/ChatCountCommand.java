@@ -24,6 +24,6 @@ public class ChatCountCommand extends TelegramCommand {
                 .replyTo(message)
                 .build();
 
-        event.getChat().sendMessage(textMessage, getTelegramBot());
+        event.getChat().sendMessage(textMessage);
     }
 }

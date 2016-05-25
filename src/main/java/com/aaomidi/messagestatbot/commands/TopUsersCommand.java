@@ -83,6 +83,6 @@ public class TopUsersCommand extends TelegramCommand {
         }
 
 
-        chat.sendMessage(sb.toString(), getTelegramBot());
+        chat.sendMessage(sb.toString());
     }
 }

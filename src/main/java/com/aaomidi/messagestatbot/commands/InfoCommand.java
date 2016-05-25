@@ -35,7 +35,7 @@ public class InfoCommand extends TelegramCommand {
 
         s.append("You can enter /listusers to see all the users of this chat!");
 
-        chat.sendMessage(s.toString(), getTelegramBot());
+        chat.sendMessage(s.toString());
 
     }
 }

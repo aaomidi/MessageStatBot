@@ -71,7 +71,7 @@ public class CommandHandler {
                     .message("You do not have permissions to execute that command " + user.getFullName())
                     .replyTo(event.getMessage())
                     .build();
-            event.getChat().sendMessage(noPermsMessage, instance.getTelegramHook().getBot());
+            event.getChat().sendMessage(noPermsMessage);
             return;
         }
 
