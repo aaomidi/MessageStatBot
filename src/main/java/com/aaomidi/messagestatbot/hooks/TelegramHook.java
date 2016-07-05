@@ -2,9 +2,15 @@ package com.aaomidi.messagestatbot.hooks;
 
 import com.aaomidi.messagestatbot.MessageStatBot;
 import com.aaomidi.messagestatbot.util.LogHandler;
+import com.aaomidi.messagestatbot.util.pagination.PaginatedMessage;
+
+import java.util.UUID;
+
 import lombok.Getter;
 import pro.zackpollard.telegrambot.api.TelegramBot;
+import pro.zackpollard.telegrambot.api.chat.message.send.ParseMode;
 import pro.zackpollard.telegrambot.api.event.Listener;
+import pro.zackpollard.telegrambot.api.event.chat.CallbackQueryReceivedEvent;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 import pro.zackpollard.telegrambot.api.event.chat.message.TextMessageReceivedEvent;
 
@@ -54,6 +60,56 @@ public class TelegramHook implements Listener {
         } */
 
         instance.getCommandHandler().handleText(event);
+    }
+
+    @Override
+    public void onCallbackQueryReceivedEvent(CallbackQueryReceivedEvent event) {
+        String ID = event.getCallbackQuery().getData();
+
+            /**
+             * Pagination via UUID
+             */
+            String action;
+            UUID uuid;
+
+            try {
+                uuid = UUID.fromString(ID.split("\\|")[0]);
+                action = ID.split("\\|")[1];
+
+                PaginatedMessage paginatedMessage = MessageStatBot.getInstance().getPaginationHandler().getMessage(uuid);
+
+                if (paginatedMessage != null) {
+                    String content;
+                    switch (action) {
+                        case "next": {
+                            content = paginatedMessage.getPaginatedList().switchToNextPage();
+                            break;
+                        }
+                        case "prev": {
+                            content = paginatedMessage.getPaginatedList().switchToPreviousPage();
+                            break;
+                        }
+                        case "ignore": {
+                            event.getCallbackQuery().answer("Use Next or Previous to navigate.", true);
+                            return;
+                        }
+                        default: {
+                            event.getCallbackQuery().answer("Unable to continue! Contact @aaomidi", true);
+                            return;
+                        }
+                    }
+
+                    MessageStatBot.getInstance().getTelegramHook().getBot().editMessageText(
+                            paginatedMessage.getMessage(), content, ParseMode.NONE, false, paginatedMessage.getButtons()
+                    );
+                    return;
+                }
+            } catch (Exception ignore) {
+
+            }
+
+
+        event.getCallbackQuery().answer("Unknown action! Button ID: " + ID, true);
     }
 }
 

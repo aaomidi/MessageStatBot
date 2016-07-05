@@ -6,11 +6,12 @@ import com.aaomidi.messagestatbot.model.TelegramMessage;
 import com.aaomidi.messagestatbot.model.TelegramUser;
 import com.aaomidi.messagestatbot.util.LogHandler;
 import com.aaomidi.messagestatbot.util.Number;
+
+import java.util.Collection;
+
 import pro.zackpollard.telegrambot.api.chat.Chat;
 import pro.zackpollard.telegrambot.api.chat.message.send.SendableTextMessage;
 import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
-
-import java.util.Collection;
 
 /**
  * Created by amir on 2015-11-29.
@@ -65,7 +66,6 @@ public class RandomMessageCommand extends TelegramCommand {
         //SendableForwardMessage forwardMessage = SendableForwardMessage.builder().messageID(randomMessage.getId()).build();
 
         SendableTextMessage forwardMessage = SendableTextMessage.builder().message(randomMessage.getMessage()).build();
-
-        chat.sendMessage(forwardMessage, getTelegramBot());
+        chat.sendMessage(forwardMessage);
     }
 }

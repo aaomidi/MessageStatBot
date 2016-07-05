@@ -3,14 +3,17 @@ package com.aaomidi.messagestatbot;
 import com.aaomidi.messagestatbot.engine.DataManager;
 import com.aaomidi.messagestatbot.engine.UpdateHandler;
 import com.aaomidi.messagestatbot.handler.CommandHandler;
+import com.aaomidi.messagestatbot.handler.PaginationHandler;
 import com.aaomidi.messagestatbot.hooks.TelegramHook;
 import com.aaomidi.messagestatbot.util.LogHandler;
-import lombok.Getter;
+
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import lombok.Getter;
 
 /**
  * Created by amir on 2015-11-27.
@@ -26,6 +29,8 @@ public class MessageStatBot {
     private CommandHandler commandHandler;
     @Getter
     private DataManager dataManager;
+    @Getter
+    private PaginationHandler paginationHandler;
     private TimerTask timerTask;
     private Thread updaterThread;
 
@@ -34,6 +39,8 @@ public class MessageStatBot {
         instance = this;
 
         this.setupDataManager();
+
+        this.setupPagination();
 
         this.setupTelegram(args[0]);
 
@@ -44,6 +51,10 @@ public class MessageStatBot {
         this.addSaveTimer();
 
         this.addShutdownHook();
+    }
+
+    private void setupPagination() {
+        paginationHandler = new PaginationHandler();
     }
 
 

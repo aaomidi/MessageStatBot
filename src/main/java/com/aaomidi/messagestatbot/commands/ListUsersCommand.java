@@ -4,13 +4,17 @@ import com.aaomidi.messagestatbot.MessageStatBot;
 import com.aaomidi.messagestatbot.model.TelegramChat;
 import com.aaomidi.messagestatbot.model.TelegramCommand;
 import com.aaomidi.messagestatbot.model.TelegramUser;
-import pro.zackpollard.telegrambot.api.chat.Chat;
-import pro.zackpollard.telegrambot.api.chat.message.send.SendableTextMessage;
-import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
+import com.aaomidi.messagestatbot.util.pagination.PaginatedList;
+import com.aaomidi.messagestatbot.util.pagination.PaginatedMessage;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import pro.zackpollard.telegrambot.api.chat.Chat;
+import pro.zackpollard.telegrambot.api.chat.message.send.ParseMode;
+import pro.zackpollard.telegrambot.api.chat.message.send.SendableTextMessage;
+import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 
 /**
  * Created by amir on 2015-12-05.
@@ -24,7 +28,9 @@ public class ListUsersCommand extends TelegramCommand {
     public void execute(CommandMessageReceivedEvent event) {
         Chat chat = event.getChat();
         TelegramChat telegramChat = getInstance().getDataManager().getChat(chat.getId());
-        StringBuilder sb = new StringBuilder("The list of users I know so far: \n");
+
+        List<String> userList = new ArrayList<>();
+        userList.add("The list of users I know so far: \n");
 
         int i = 0;
         List<TelegramUser> users = new ArrayList<>(telegramChat.getUsers().values());
@@ -33,8 +39,10 @@ public class ListUsersCommand extends TelegramCommand {
             return o1.getId() > o2.getId() ? 1 : -1;
         });
 
+
         for (TelegramUser tu : users) {
-            sb
+            StringBuilder userLine = new StringBuilder()
+
                     .append("\t")
                     .append(++i)
                     .append(". ")
@@ -42,14 +50,21 @@ public class ListUsersCommand extends TelegramCommand {
                     .append(" - ")
                     .append(tu.getName());
             if (tu.getUsername() != null)
-                sb.append(" - ").append(tu.getUsername());
-            sb.append("\n");
-        }
-        SendableTextMessage textMessage = SendableTextMessage.builder()
-                .message(sb.toString())
-                .replyTo(event.getMessage())
-                .build();
+                userLine.append(" - ").append(tu.getUsername());
 
-        chat.sendMessage(textMessage);
+            userList.add(userLine.toString());
+        }
+
+        PaginatedMessage paginatedMessage = new PaginatedMessage(
+                new PaginatedList(userList, 10)
+        );
+
+        paginatedMessage.setMessage(chat.sendMessage(
+                SendableTextMessage.builder()
+                        .message(paginatedMessage.getPaginatedList().getCurrentPageContent())
+                        .replyMarkup(paginatedMessage.getButtons())
+                        .parseMode(ParseMode.NONE)
+                        .disableWebPagePreview(true)
+                        .build()));
     }
 }
