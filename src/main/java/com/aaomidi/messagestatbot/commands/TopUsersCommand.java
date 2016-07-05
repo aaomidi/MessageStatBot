@@ -4,10 +4,16 @@ import com.aaomidi.messagestatbot.MessageStatBot;
 import com.aaomidi.messagestatbot.model.TelegramChat;
 import com.aaomidi.messagestatbot.model.TelegramCommand;
 import com.aaomidi.messagestatbot.model.TelegramUser;
-import pro.zackpollard.telegrambot.api.chat.Chat;
-import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
+import com.aaomidi.messagestatbot.util.pagination.PaginatedList;
+import com.aaomidi.messagestatbot.util.pagination.PaginatedMessage;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import pro.zackpollard.telegrambot.api.chat.Chat;
+import pro.zackpollard.telegrambot.api.chat.message.send.ParseMode;
+import pro.zackpollard.telegrambot.api.chat.message.send.SendableTextMessage;
+import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 
 /**
  * Created by amir on 2015-11-27.
@@ -23,7 +29,7 @@ public class TopUsersCommand extends TelegramCommand {
     public void execute(CommandMessageReceivedEvent event) {
         Chat chat = event.getChat();
         TelegramChat telegramChat = getInstance().getDataManager().getChat(chat.getId());
-        StringBuilder sb = new StringBuilder();
+        List<String> messageList = new ArrayList<>();
 
         String arg = "messages";
         if (event.getArgs().length > 0) {
@@ -38,11 +44,14 @@ public class TopUsersCommand extends TelegramCommand {
                 int i = 0;
                 for (TelegramUser user : list) {
                     if (i++ == NUM_OF_USER) break;
-                    sb.append(String.format("%d - %s", user.getWordCount(), user.getName()));
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.append(String.format("%d - %s", user.getWordCount(), user.getName()));
 
                     if (user.getUsername() != null)
-                        sb.append(String.format(" - %s", user.getUsername()));
-                    sb.append("\n");
+                        stringBuilder.append(String.format(" - %s", user.getUsername()));
+                    stringBuilder.append("\n");
+
+                    messageList.add(stringBuilder.toString());
                 }
                 break;
 
@@ -54,11 +63,14 @@ public class TopUsersCommand extends TelegramCommand {
                 int i = 0;
                 for (TelegramUser user : list) {
                     if (i++ == NUM_OF_USER) break;
-                    sb.append(String.format("%.2f - %s", user.getWordCount() / (double) user.getMessages().size(), user.getName()));
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.append(String.format("%.2f - %s", user.getWordCount() / (double) user.getMessages().size(), user.getName()));
 
                     if (user.getUsername() != null)
-                        sb.append(String.format("- %s", user.getUsername()));
-                    sb.append("\n");
+                        stringBuilder.append(String.format("- %s", user.getUsername()));
+                    stringBuilder.append("\n");
+
+                    messageList.add(stringBuilder.toString());
                 }
                 break;
             }
@@ -71,18 +83,30 @@ public class TopUsersCommand extends TelegramCommand {
                 int i = 0;
                 for (TelegramUser user : list) {
                     if (i++ == NUM_OF_USER) break;
-                    sb.append(String.format("%d - %s", user.getMessages().size(), user.getName()));
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.append(String.format("%d - %s", user.getMessages().size(), user.getName()));
 
                     if (user.getUsername() != null)
-                        sb.append(String.format(" - %s", user.getUsername()));
-                    sb.append("\n");
+                        stringBuilder.append(String.format(" - %s", user.getUsername()));
+                    stringBuilder.append("\n");
+
+                    messageList.add(stringBuilder.toString());
                 }
                 break;
             }
 
         }
 
+        PaginatedMessage paginatedMessage = new PaginatedMessage(
+                new PaginatedList(messageList, 10)
+        );
 
-        chat.sendMessage(sb.toString());
+        paginatedMessage.setMessage(chat.sendMessage(
+                SendableTextMessage.builder()
+                        .message(paginatedMessage.getPaginatedList().getCurrentPageContent())
+                        .replyMarkup(paginatedMessage.getButtons())
+                        .parseMode(ParseMode.NONE)
+                        .disableWebPagePreview(true)
+                        .build()));
     }
 }

@@ -6,13 +6,19 @@ import com.aaomidi.messagestatbot.model.TelegramMessage;
 import com.aaomidi.messagestatbot.model.TelegramUser;
 import com.aaomidi.messagestatbot.model.WordData;
 import com.aaomidi.messagestatbot.util.Number;
-import pro.zackpollard.telegrambot.api.chat.Chat;
-import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
+import com.aaomidi.messagestatbot.util.pagination.PaginatedList;
+import com.aaomidi.messagestatbot.util.pagination.PaginatedMessage;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.TreeMap;
+
+import pro.zackpollard.telegrambot.api.chat.Chat;
+import pro.zackpollard.telegrambot.api.chat.message.send.ParseMode;
+import pro.zackpollard.telegrambot.api.chat.message.send.SendableTextMessage;
+import pro.zackpollard.telegrambot.api.event.chat.message.CommandMessageReceivedEvent;
 
 /**
  * Created by amir on 2015-11-27.
@@ -50,16 +56,27 @@ public class TopWordsCommand extends TelegramCommand {
         ArrayList<WordData> wordsByFrequency = new ArrayList<>(words.values());
 
         Collections.sort(wordsByFrequency, (o1, o2) -> o2.getCount() - o1.getCount());
-        StringBuilder sb = new StringBuilder(String.format("Top words with a minimum length of %d are: \n", minAmount == -1 ? 0 : minAmount));
+        List<String> wordList = new ArrayList<>();
+        wordList.add(String.format("Top words with a minimum length of %d are: \n", minAmount == -1 ? 0 : minAmount));
 
         int i = 0;
         for (WordData wordData : wordsByFrequency) {
             if (i++ == 10) break;
 
-            sb.append(String.format("%s - %d\n", wordData.getWord(), wordData.getCount()));
+            wordList.add(String.format("%s - %d\n", wordData.getWord(), wordData.getCount()));
         }
 
-        chat.sendMessage(sb.toString());
+        PaginatedMessage paginatedMessage = new PaginatedMessage(
+                new PaginatedList(wordList, 10)
+        );
+
+        paginatedMessage.setMessage(chat.sendMessage(
+                SendableTextMessage.builder()
+                        .message(paginatedMessage.getPaginatedList().getCurrentPageContent())
+                        .replyMarkup(paginatedMessage.getButtons())
+                        .parseMode(ParseMode.NONE)
+                        .disableWebPagePreview(true)
+                        .build()));
     }
 
     private void updateWord(String w) {
